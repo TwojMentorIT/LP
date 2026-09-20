@@ -47,7 +47,9 @@ Technologia: statyczny HTML, jeden plik CSS, jeden plik JS (vanilla, bez zależn
   README.md, CLAUDE.md, AGENTS.md   dokumentacja i wskazówki dla agentów
 ```
 
-Elementy wspólne (nagłówek, stopka, modal zapisu MailerLite) są skopiowane do każdej strony HTML. Zmiana w jednym z nich wymaga zmiany we wszystkich stronach (`index.html`, `zostan-mentorem.html`, `faq.html`, `regulamin.html`, `polityka-prywatnosci.html`, `mapa-strony.html`). `404.html` jest celowo uproszczona.
+Elementy wspólne (nagłówek, stopka, modal zapisu MailerLite) są skopiowane do każdej strony HTML. Zmiana w jednym z nich wymaga zmiany we wszystkich stronach (`index.html`, `zostan-mentorem.html`, `faq.html`, `regulamin.html`, `polityka-prywatnosci.html`, `mapa-strony.html`, `404.html`).
+
+`404.html` ma pełny układ LP (nagłówek, stopka, modal, styl hero z gradientem i przyciski z `style.css`), a dodatkowo: skrypt przekierowujący `/x/` na `/x` na samym początku `<head>`, `<meta name="robots" content="noindex">` i brak canonical. Strona jest serwowana pod dowolnym nieistniejącym adresem, dlatego używa wyłącznie linków root-absolute.
 
 ## 3. Deployment na produkcję
 
@@ -141,6 +143,10 @@ Zasada: **każda** zmiana w repozytorium dodaje wpis na górze tej listy, w tym 
 
 Wpisy:
 
+- **2026-09-20 (strona 404)**
+  - **WHO:** Claude Code (Claude Sonnet 5) na polecenie Bartka.
+  - **WHY:** dotychczasowa `404.html` była minimalna i nie wyglądała jak reszta serwisu.
+  - **WHAT:** `404.html` przebudowana na pełny układ LP (nagłówek, stopka, modal zapisu, sekcja z dużym "404" w gradiencie marki, przyciski "Wróć na stronę główną" i "Zobacz mapę strony", linki do głównych podstron). Zachowano przekierowanie `/x/` na `/x`, `noindex` i tag GA. Weryfikacja: `node scripts/check.js` (OK), podgląd lokalny na desktopie i mobile (bez poziomego przewijania).
 - **2026-09-20**
   - **WHO:** Claude Code (Claude Sonnet 5) na polecenie Bartka.
   - **WHY:** wdrożenie analityki, uporządkowanie adresów URL (bez trailing slashy), poprawa SEO/AI, usunięcie markerów AI z treści oraz udokumentowanie repozytorium dla kolejnych agentów.

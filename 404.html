@@ -30,20 +30,249 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/style.css" />
+  <style>
+    .error-hero{position:relative;padding:clamp(64px,10vw,120px) 0;text-align:center;overflow:hidden;
+      background:radial-gradient(120% 90% at 85% 0%,#efeafe 0%,#fbfaff 45%,#fff 100%)}
+    .error-code{font-size:clamp(96px,22vw,220px);font-weight:800;line-height:1;letter-spacing:-.04em;margin-bottom:8px;
+      background:linear-gradient(135deg,var(--purple) 0%,var(--brand-blue) 100%);
+      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+    .error-sub{margin:20px auto 32px;max-width:46ch;font-size:18px;color:var(--slate)}
+    .error-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .error-links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+    .error-links .tech-chip:hover{border-color:var(--purple);color:var(--purple);transform:translateY(-2px)}
+  </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+
+  <!-- ======= HEADER ======= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="TwójMentor.IT - strona główna">
+        <img src="/assets/img/logo.webp" width="218" height="53" alt="TwójMentor.IT" class="logo-img" />
+      </a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="header-actions">
+        <a href="/zostan-mentorem" class="btn btn-ghost">Chcę zostać mentorem</a>
+        <button type="button" class="btn btn-primary js-signup-open">Zapisz się</button>
+      </div>
+    </div>
+  </header>
+
   <main id="main">
-    <section class="section">
-      <div class="container" style="max-width:720px;text-align:center">
-        <a href="/" aria-label="TwójMentor.IT - strona główna">
-          <img src="/assets/img/logo.webp" width="218" height="53" alt="TwójMentor.IT" />
-        </a>
-        <h1 class="section-title" style="margin:32px 0 12px">Nie znaleziono strony</h1>
-        <p>Strona, której szukasz, nie istnieje lub została przeniesiona.</p>
-        <p style="margin-top:24px"><a href="/" class="btn btn-primary">Wróć na stronę główną</a></p>
-        <p style="margin-top:16px"><a href="/mapa-strony">Zobacz mapę strony</a></p>
+    <section class="error-hero" aria-labelledby="error-title">
+      <div class="container">
+        <div class="error-code" aria-hidden="true">404</div>
+        <h1 id="error-title" class="hero-title">Nie znaleziono strony</h1>
+        <p class="error-sub">Strona, której szukasz, nie istnieje lub została przeniesiona. Wróć na stronę główną albo skorzystaj z jednego z linków poniżej.</p>
+        <div class="error-actions">
+          <a href="/" class="btn btn-primary">Wróć na stronę główną</a>
+          <a href="/mapa-strony" class="btn btn-ghost">Zobacz mapę strony</a>
+        </div>
+        <nav class="error-links" aria-label="Przydatne linki">
+          <a href="/zostan-mentorem" class="tech-chip">Zostań Mentorem</a>
+          <a href="/faq" class="tech-chip">FAQ</a>
+          <a href="/regulamin" class="tech-chip">Regulamin</a>
+          <a href="/polityka-prywatnosci" class="tech-chip">Polityka prywatności</a>
+        </nav>
       </div>
     </section>
   </main>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo logo-footer" aria-label="TwójMentor.IT">
+          <img src="/assets/img/Logo.png" width="206" height="50" alt="TwójMentor.IT" class="logo-img" />
+        </a>
+      </div>
+      <nav class="footer-col" aria-label="Regulaminy">
+        <h3>Regulaminy</h3>
+        <a href="/regulamin">Regulamin</a>
+        <a href="/polityka-prywatnosci">Polityka prywatności</a>
+      </nav>
+      <nav class="footer-col" aria-label="Pomoc">
+        <h3>Pomoc</h3>
+        <a href="/faq">FAQ</a>
+        <a href="/mapa-strony">Mapa strony</a>
+      </nav>
+      <!-- social media hidden -->
+
+    </div>
+    <div class="container footer-bottom">
+      <p>TwójMentor.IT @2026</p>
+    </div>
+  </footer>
+
+  <!-- ======= MODAL MAILERLITE ======= -->
+  <div id="signupModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose" aria-label="Zamknij">&times;</button>
+
+      <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1780569");</style>
+      <style type="text/css">
+        .ml-form-embedSubmitLoad{display:inline-block;width:20px;height:20px}
+        .ml-form-embedSubmitLoad:after{content:" ";display:block;width:11px;height:11px;margin:1px;border-radius:50%;border:4px solid #fff;border-color:#fff #fff #fff transparent;animation:ml-form-embedSubmitLoad 1.2s linear infinite}
+        @keyframes ml-form-embedSubmitLoad{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+        .g-recaptcha{transform:scale(1);-webkit-transform:scale(1);transform-origin:0 0;-webkit-transform-origin:0 0}
+        #mlb2-42301566.ml-form-embedContainer{box-sizing:border-box;display:table;margin:0 auto;position:static;width:100%!important}
+        #mlb2-42301566.ml-form-embedContainer h4,#mlb2-42301566.ml-form-embedContainer p,#mlb2-42301566.ml-form-embedContainer span,#mlb2-42301566.ml-form-embedContainer button{text-transform:none!important;letter-spacing:normal!important}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper{background-color:#fff;border-width:0;border-color:transparent;border-radius:4px;border-style:solid;box-sizing:border-box;display:inline-block!important;margin:0;padding:0;position:relative}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper.embedForm{max-width:400px;width:100%}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-align-center{text-align:center}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,#mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody{padding:20px 20px 0}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent,#mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent{text-align:left;margin:0 0 20px}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4,#mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4{color:#000;font-family:'Poppins',sans-serif;font-size:24px;font-weight:700;margin:0 0 10px;text-align:left;word-break:break-word}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p,#mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p{color:#000;font-family:'Poppins',sans-serif;font-size:14px;font-weight:400;line-height:22px;margin:0 0 10px;text-align:left}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form{margin:0;width:100%}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent,#mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow{margin:0 0 20px;width:100%}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow{float:left}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow{margin:0 0 10px;width:100%}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow.ml-last-item{margin:0}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input{background-color:#F6F8F9!important;color:#333!important;border-color:#D0D4DB;border-radius:4px!important;border-style:solid!important;border-width:1px!important;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:14px!important;height:auto;line-height:21px!important;margin:0;padding:10px!important;width:100%!important;box-sizing:border-box!important;max-width:100%!important}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow textarea{background-color:#F6F8F9!important;color:#333!important;border-color:#D0D4DB;border-radius:4px!important;border-style:solid!important;border-width:1px!important;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:14px!important;height:auto;line-height:21px!important;margin:0;padding:10px!important;width:100%!important;box-sizing:border-box!important;max-width:100%!important}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-select{background-color:#F6F8F9!important;color:#333!important;border-color:#D0D4DB;border-radius:4px!important;border-style:solid!important;border-width:1px!important;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:14px!important;line-height:20px!important;margin:0;padding:10px 28px 10px 12px!important;width:100%!important;box-sizing:border-box!important;max-width:100%!important;height:auto;display:inline-block;vertical-align:middle;background:url('https://assets.mlcdn.com/ml/images/default/dropdown.svg') no-repeat right .75rem center/8px 10px;-webkit-appearance:none;-moz-appearance:none;appearance:none}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group{text-align:left!important}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group label{margin-bottom:5px;color:#333;font-size:14px;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-weight:bold;display:inline-block;line-height:20px}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description{color:#000;display:block;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:12px;text-align:left;margin-bottom:0;position:relative;vertical-align:top}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label{font-weight:normal;margin:0;padding:0;position:relative;display:block;min-height:24px;padding-left:24px}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label p{color:#000!important;font-family:'Open Sans',Arial,Helvetica,sans-serif!important;font-size:12px!important;font-weight:normal!important;line-height:18px!important;padding:0!important;margin:0 5px 0 0!important}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit{margin:0 0 20px;float:left;width:100%}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button{background-color:#5b34d6!important;border:none!important;border-radius:25px!important;box-shadow:none!important;color:#fff!important;cursor:pointer;font-family:'Poppins',sans-serif!important;font-size:14px!important;font-weight:700!important;line-height:21px!important;height:auto;padding:10px!important;width:100%!important;box-sizing:border-box!important}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.loading{display:none}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover{background-color:#333!important}
+        .ml-form-recaptcha{margin-bottom:20px;float:left}
+        .ml-form-recaptcha.ml-error iframe{border:solid 1px #ff0000}
+        .ml-error input,.ml-error textarea,.ml-error select{border-color:red!important}
+        .ml-error .label-description,.ml-error .label-description p,.ml-error label:first-child{color:#ff0000!important}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-control,#mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-control{position:relative;display:block;min-height:1.5rem;padding-left:1.5rem}
+        #mlb2-42301566.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input[type="checkbox"]{box-sizing:border-box;padding:0;position:absolute;z-index:-1;opacity:0;margin-top:5px;margin-left:-1.5rem;overflow:visible}
+        @media only screen and (max-width:400px){.ml-form-embedWrapper.embedForm{width:100%!important}}
+        @media screen and (max-width:480px){.ml-form-recaptcha{width:220px!important}.g-recaptcha{transform:scale(0.78);-webkit-transform:scale(0.78);transform-origin:0 0;-webkit-transform-origin:0 0}}
+      </style>
+
+      <div id="mlb2-42301566" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-42301566">
+        <div class="ml-form-align-center">
+          <div class="ml-form-embedWrapper embedForm">
+
+            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+              <div class="ml-form-embedContent">
+                <h4 id="modalTitle">Zapisz się na listę oczekujących</h4>
+                <p>Chcesz zostać mentorem lub uczniem? Dołącz do naszej społeczności! Start niebawem.</p>
+              </div>
+
+              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2414219/forms/189623742043784431/subscribe" data-code="" method="post" target="_blank">
+                <div class="ml-form-formContent">
+
+                  <div class="ml-form-fieldRow">
+                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                      <label>Email</label>
+                      <input aria-label="email" aria-required="true" type="email" class="form-control" name="fields[email]" placeholder="" autocomplete="email">
+                    </div>
+                  </div>
+
+                  <div class="ml-form-fieldRow">
+                    <div class="ml-field-group ml-field-state ml-validate-required">
+                      <label>Chcę zostać</label>
+                      <select class="custom-select" name="fields[state]" aria-label="state" aria-required="true">
+                        <option value="">-</option>
+                        <option>Mentorem</option>
+                        <option>Uczniem</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="ml-form-fieldRow">
+                    <div class="ml-field-group ml-field-name ml-validate-required">
+                      <label>Specjalizacja</label>
+                      <select class="custom-select" name="fields[name]" aria-label="name" aria-required="true">
+                        <option value="">-</option>
+                        <option>Frontend</option>
+                        <option>Backend</option>
+                        <option>Design</option>
+                        <option>Analysis</option>
+                        <option>Testing</option>
+                        <option>Research</option>
+                        <option>Writing</option>
+                        <option>DevOps</option>
+                        <option>Admin</option>
+                        <option>Data</option>
+                        <option>PM/PO</option>
+                        <option>Cybersecurity</option>
+                        <option>Mobile</option>
+                        <option>Game Dev</option>
+                        <option>Mentoring kariery</option>
+                        <option>Rektutacja IT</option>
+                        <option>AI</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="ml-form-fieldRow ml-last-item">
+                    <div class="ml-field-group ml-field-last_name">
+                      <label>Chcesz coś dodać? (opcjonalne)</label>
+                      <textarea class="form-control" name="fields[last_name]" aria-label="last_name" maxlength="1024" placeholder=""></textarea>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="ml-form-checkboxRow ml-validate-required">
+                  <label class="checkbox">
+                    <input type="checkbox" required>
+                    <div class="label-description">
+                      <p>Zapoznałem się i akceptuję treść Polityki prywatności.</p>
+                    </div>
+                  </label>
+                </div>
+
+                <div class="ml-form-recaptcha ml-validate-required">
+                  <style>.ml-form-recaptcha{margin-bottom:20px}.ml-form-recaptcha.ml-error iframe{border:solid 1px #ff0000}@media screen and (max-width:480px){.ml-form-recaptcha{width:220px!important}.g-recaptcha{transform:scale(.78);-webkit-transform:scale(.78);transform-origin:0 0;-webkit-transform-origin:0 0}}</style>
+                  <script src="https://www.google.com/recaptcha/api.js"></script>
+                  <div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD"></div>
+                </div>
+
+                <input type="hidden" name="ml-submit" value="1">
+                <div class="ml-form-embedSubmit">
+                  <button type="submit" class="primary">Zapisz się</button>
+                  <button disabled style="display:none" type="button" class="loading">
+                    <div class="ml-form-embedSubmitLoad"></div>
+                    <span class="sr-only">Loading...</span>
+                  </button>
+                </div>
+                <input type="hidden" name="anticsrf" value="true">
+              </form>
+            </div>
+
+            <div class="ml-form-successBody row-success" style="display:none">
+              <div class="ml-form-successContent">
+                <h4>Zostałeś zapisany!</h4>
+                <p>Gdy wystartujemy zostaniesz poinformowany o tym jako pierwszy.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <script>
+        function ml_webform_success_42301566() {
+          var $ = ml_jQuery || jQuery;
+          $('.ml-subscribe-form-42301566 .row-success').show();
+          $('.ml-subscribe-form-42301566 .row-form').hide();
+        }
+      </script>
+      <script src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b" type="text/javascript"></script>
+      <script>fetch("https://assets.mailerlite.com/jsonp/2414219/forms/189623742043784431/takel")</script>
+
+    </div>
+  </div>
+
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
