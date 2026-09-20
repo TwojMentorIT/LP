@@ -3,17 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zostań Mentorem — TwójMentor.IT</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GP38ZVC1XN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GP38ZVC1XN');
+  </script>
+  <title>Zostań Mentorem - TwójMentor.IT</title>
   <meta name="description" content="Dołącz do grona Mentorów TwójMentor.IT. Dziel się wiedzą, buduj markę i zarabiaj na swoim doświadczeniu w IT." />
   <meta name="theme-color" content="#5b34d6" />
-  <link rel="canonical" href="https://mentor-it.github.io/LP/zostan-mentorem/" />
-  <link rel="icon" type="image/svg+xml" href="../assets/img/logo-refresh_2.svg" />
+  <link rel="canonical" href="https://twojmentor.it/zostan-mentorem" />
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo-refresh_2.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
   <style>
-    /* === § 0 Navbar — blue variant === */
+    /* === § 0 Navbar - blue variant === */
     .site-header--mentor .btn-primary { background: var(--brand-blue); box-shadow: 0 8px 20px rgba(47,127,208,.28) }
     .site-header--mentor .btn-primary:hover { background: #2470bb; box-shadow: 0 12px 28px rgba(47,127,208,.36) }
     .site-header--mentor .btn-ghost { color: var(--brand-blue); border-color: #b8d9f4 }
@@ -86,12 +95,12 @@
     .benefits { background: #f0f7ff }
     .benefit-icon { background: var(--brand-blue) }
 
-    /* === § 5 Payment — 3-column override === */
+    /* === § 5 Payment - 3-column override === */
     .mentoring { background: #fff }
     .feature-icon { background: var(--brand-blue) }
     .payment-grid { grid-template-columns: repeat(3, 1fr) }
 
-    /* === § 6 Referral section — two-tone (tła na kolumnach, jak mentor-intro) === */
+    /* === § 6 Referral section - two-tone (tła na kolumnach, jak mentor-intro) === */
     .referral { position: relative; overflow: hidden; padding: 0; background: transparent; }
     .referral .container { position: relative; z-index: 1; max-width: 100%; padding: 0 }
     .referral-grid {
@@ -126,14 +135,14 @@
     .faq-chevron::before, .faq-chevron::after { background: var(--brand-blue) }
     .link-arrow { color: var(--brand-blue) }
 
-    /* === § 9 Footer — dark blue variant === */
+    /* === § 9 Footer - dark blue variant === */
     .site-footer--mentor { background: #0f2a4a }
     .site-footer--mentor .socials a:hover { background: var(--brand-blue) }
 
-    /* === § 8 CTA box — blue gradient === */
+    /* === § 8 CTA box - blue gradient === */
     .cta-box { background: linear-gradient(135deg, #2f7fd0 0%, #1a5fa8 100%) }
 
-    /* === Wide screens (>1440px) — constrain full-bleed sections to standard max-width === */
+    /* === Wide screens (>1440px) - constrain full-bleed sections to standard max-width === */
     @media (min-width: 1440px) {
       .mentor-intro-grid {
         max-width: 1180px;
@@ -173,8 +182,8 @@
   <!-- ======= HEADER ======= -->
   <header class="site-header site-header--mentor" id="siteHeader">
     <div class="container header-inner">
-      <a href="../" class="logo" aria-label="TwójMentor.IT — strona główna">
-        <img src="../assets/img/logo.webp" width="218" height="53" alt="TwójMentor.IT" class="logo-img" />
+      <a href="/" class="logo" aria-label="TwójMentor.IT - strona główna">
+        <img src="/assets/img/logo.webp" width="218" height="53" alt="TwójMentor.IT" class="logo-img" />
       </a>
 
       <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
@@ -182,7 +191,7 @@
       </button>
 
       <div class="header-actions">
-        <a href="../" class="btn btn-ghost">Chcę zostać uczniem</a>
+        <a href="/" class="btn btn-ghost">Chcę zostać uczniem</a>
         <button type="button" class="btn btn-primary js-signup-open">Zapisz się</button>
       </div>
     </div>
@@ -201,9 +210,9 @@
         <div class="hero-visual hero-mentor-visual">
           <div class="hero-photo-wrap">
             <img
-              src="../assets/img/hero-mentor.png"
+              src="/assets/img/hero-mentor.png"
               width="560" height="420"
-              alt="Sesja mentoringowa online — widok video-rozmowy z ikonami technologii"
+              alt="Sesja mentoringowa online - widok video-rozmowy z ikonami technologii"
               class="hero-photo"
             />
           </div>
@@ -216,7 +225,7 @@
       <div class="mentor-intro-grid">
         <div class="mentor-intro-photo reveal">
           <img
-            src="../assets/img/mentor-intro.png"
+            src="/assets/img/mentor-intro.png"
             alt="Mentorka na wideorozmowie z uczennicą podczas sesji online"
             loading="lazy"
           />
@@ -244,7 +253,7 @@
             </div>
             <div class="how-media">
               <img
-                src="../assets/img/step-formularz.png"
+                src="/assets/img/step-formularz.png"
                 width="700" height="507"
                 loading="lazy"
                 alt="Formularz rejestracyjny mentora w aplikacji TwójMentor.IT"
@@ -256,11 +265,11 @@
             <div class="how-text">
               <span class="step-num">#2</span>
               <h3>Określ zasady</h3>
-              <p>Pracuj na własnych zasadach — stawkę, godziny, program. Wszystko tak jak chcesz.</p>
+              <p>Pracuj na własnych zasadach - stawkę, godziny, program. Wszystko tak jak chcesz.</p>
             </div>
             <div class="how-media">
               <img
-                src="../assets/img/step-profil.png"
+                src="/assets/img/step-profil.png"
                 width="700" height="508"
                 loading="lazy"
                 alt="Panel mentora z formularzem ustawień profilu w aplikacji TwójMentor.IT"
@@ -276,7 +285,7 @@
             </div>
             <div class="how-media">
               <img
-                src="../assets/img/step-sesja.png"
+                src="/assets/img/step-sesja.png"
                 width="700" height="507"
                 loading="lazy"
                 alt="Mentorka podczas wideorozmowy mentoringowej online"
@@ -293,10 +302,10 @@
       <div class="container benefits-grid">
         <div class="benefits-visual reveal">
           <img
-            src="../assets/img/benefits-visual.png"
+            src="/assets/img/benefits-visual.png"
             width="480" height="674"
             loading="lazy"
-            alt="Mentor i uczeń podczas sesji mentoringowej — korzyści ze współpracy z TwójMentor.IT"
+            alt="Mentor i uczeń podczas sesji mentoringowej - korzyści ze współpracy z TwójMentor.IT"
             class="benefits-photo"
           />
         </div>
@@ -377,7 +386,7 @@
               </svg>
             </span>
             <h3>Zwroty</h3>
-            <p>Uczeń może odwołać bezpłatnie sesję do 24h przed jej rozpoczęciem. Gdy odwoła po tym czasie — dostajesz pełną kwotę za sesję.</p>
+            <p>Uczeń może odwołać bezpłatnie sesję do 24h przed jej rozpoczęciem. Gdy odwoła po tym czasie - dostajesz pełną kwotę za sesję.</p>
           </article>
         </div>
       </div>
@@ -393,10 +402,10 @@
           </div>
           <div class="referral-visual reveal">
             <img
-              src="../assets/img/referral-visual.png"
+              src="/assets/img/referral-visual.png"
               width="2876" height="3048"
               loading="lazy"
-              alt="Mentor korzystający z programu referencyjnego — stan konta i procent od transakcji"
+              alt="Mentor korzystający z programu referencyjnego - stan konta i procent od transakcji"
               class="referral-photo"
             />
           </div>
@@ -409,7 +418,7 @@
       <div class="container">
         <div class="faq-head reveal">
           <h2 id="faq-mentor-title" class="section-title">Pytania i odpowiedzi</h2>
-          <a href="../faq/" class="link-arrow">
+          <a href="/faq" class="link-arrow">
             Zobacz wszystkie pytania i odpowiedzi
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -429,7 +438,7 @@
           </details>
           <details class="faq-item">
             <summary>Jak umówić sesję z uczniem?<span class="faq-chevron" aria-hidden="true"></span></summary>
-            <div class="faq-body"><p>Uczeń samodzielnie wybiera dostępny termin z Twojego kalendarza i rezerwuje sesję. Otrzymasz powiadomienie e-mail z potwierdzeniem. Sesje odbywają się przez wbudowany system wideorozmów — bez potrzeby używania zewnętrznych aplikacji.</p></div>
+            <div class="faq-body"><p>Uczeń samodzielnie wybiera dostępny termin z Twojego kalendarza i rezerwuje sesję. Otrzymasz powiadomienie e-mail z potwierdzeniem. Sesje odbywają się przez wbudowany system wideorozmów - bez potrzeby używania zewnętrznych aplikacji.</p></div>
           </details>
         </div>
       </div>
@@ -455,18 +464,19 @@
   <footer class="site-footer site-footer--mentor">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a href="../" class="logo logo-footer" aria-label="TwójMentor.IT">
-          <img src="../assets/img/Logo.png" width="206" height="50" alt="TwójMentor.IT" class="logo-img" />
+        <a href="/" class="logo logo-footer" aria-label="TwójMentor.IT">
+          <img src="/assets/img/Logo.png" width="206" height="50" alt="TwójMentor.IT" class="logo-img" />
         </a>
       </div>
       <nav class="footer-col" aria-label="Regulaminy">
         <h3>Regulaminy</h3>
-        <a href="../regulamin/">Regulamin</a>
-        <a href="../polityka-prywatnosci/">Polityka prywatności</a>
+        <a href="/regulamin">Regulamin</a>
+        <a href="/polityka-prywatnosci">Polityka prywatności</a>
       </nav>
       <nav class="footer-col" aria-label="Pomoc">
         <h3>Pomoc</h3>
-        <a href="../faq/">FAQ</a>
+        <a href="/faq">FAQ</a>
+        <a href="/mapa-strony">Mapa strony</a>
       </nav>
     </div>
     <div class="container footer-bottom">
@@ -639,7 +649,7 @@
     </div>
   </div>
 
-  <script src="../assets/js/main.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
   <script>
     /* Pre-select "Mentorem" when modal opens on this page */
     (function () {

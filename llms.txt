@@ -1,0 +1,21 @@
+# TwójMentor.IT
+
+> TwójMentor.IT to polska platforma łącząca mentorów IT z uczniami. Uczeń wyszukuje mentora, umawia indywidualną sesję online 1:1 (wideorozmowa) i rozwija się w wybranej technologii, np. Python, JavaScript, React, Java. Serwis jest w fazie przedpremierowej: na stronie można zapisać się na listę oczekujących.
+
+Język serwisu: polski. Adres: https://twojmentor.it. Kontakt: devs@twojmentor.it
+
+## Strony serwisu
+
+- [Strona główna](https://twojmentor.it/): czym jest mentoring, jak działa platforma, korzyści dla uczniów, zapis na listę oczekujących.
+- [Zostań Mentorem](https://twojmentor.it/zostan-mentorem): informacje dla osób, które chcą prowadzić sesje mentoringowe i dzielić się doświadczeniem w IT.
+- [FAQ](https://twojmentor.it/faq): odpowiedzi na najczęstsze pytania uczniów i mentorów.
+
+## Dokumenty
+
+- [Regulamin](https://twojmentor.it/regulamin): zasady korzystania z serwisu, rezerwacji sesji, opinii i reklamacji.
+- [Polityka prywatności](https://twojmentor.it/polityka-prywatnosci): zasady przetwarzania danych osobowych.
+
+## Dla wyszukiwarek
+
+- [Mapa strony](https://twojmentor.it/mapa-strony): lista wszystkich podstron.
+- [sitemap.xml](https://twojmentor.it/sitemap.xml): mapa strony w formacie XML.
