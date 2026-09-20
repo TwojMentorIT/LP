@@ -128,7 +128,7 @@ Tag `gtag.js` z identyfikatorem `G-GP38ZVC1XN` jest wklejony w `<head>` każdej 
 ## 9. Otwarte kwestie (do decyzji właściciela)
 
 1. **Google Analytics a polityka prywatności.** Polityka (sekcja Cookies) mówi, że serwis nie używa opcjonalnych cookies analitycznych wymagających zgody. Tag GA4 jest z tym sprzeczny i zwykle wymaga zgody użytkownika (banner cookies / Consent Mode). Wymaga aktualizacji polityki albo wdrożenia mechanizmu zgody.
-2. **Płatności.** Regulamin (§3) stwierdza, że serwis nie obsługuje płatności, natomiast FAQ, dane strukturalne FAQPage na stronie głównej i sekcja "Bezpieczny system płatności" na `/zostan-mentorem` opisują płatności w ramach platformy. Treści są niespójne.
+2. **Płatności (rozwiązane 2026-09-20).** Regulamin (§3) stwierdza, że serwis nie obsługuje płatności, dlatego z LP usunięto wszystkie treści o płatnościach, rozliczeniach, skarbonce, zwrotach i programie poleceń (prowizja od transakcji). Nie dodawaj takich treści na LP, dopóki regulamin tego nie zmieni. Jedyny wyjątek: FAQ mentora "Jak wygląda proces płatności?" z odpowiedzią o rozliczeniu poza platformą.
 3. `/x/` zwraca HTTP 404 z przekierowaniem po stronie przeglądarki, nie prawdziwe `301` (sekcja 4).
 4. Dekoracyjne glify `★` i emoji prezentu (sekcja 6) można w przyszłości zastąpić grafiką SVG.
 
@@ -143,6 +143,14 @@ Zasada: **każda** zmiana w repozytorium dodaje wpis na górze tej listy, w tym 
 
 Wpisy:
 
+- **2026-09-20 (usunięcie treści o płatnościach)**
+  - **WHO:** Claude Code (Claude Sonnet 5) na polecenie Bartka.
+  - **WHY:** regulamin stwierdza, że serwis nie obsługuje płatności, a LP nadal opisywała płatności, skarbonkę i prowizję od transakcji (sprzeczność prawna i wprowadzanie w błąd).
+  - **WHAT:** w `zostan-mentorem.html` usunięto ukryte dotąd sekcje "Bezpieczny system płatności" i program poleceń (z ich CSS) oraz FAQ "Kiedy zostaje pobrana opłata za sesję?"; w `index.html` i `faq.html` usunięto FAQ "Czy TwójMentor pośredniczy w rozliczeniach..." (także z JSON-LD), zdanie o rozliczaniu w punktach, zapis o zwrocie środków przy odwołaniu sesji i słowo "płatność" w opisie korzyści; z `style.css` usunięto klasę `.hidden-lp-section`; usunięto nieużywany obraz `assets/img/referral-visual.png`. Zostawiono FAQ mentora "Jak wygląda proces płatności?" z odpowiedzią o rozliczeniu poza platformą, dokumenty prawne bez zmian. Weryfikacja: `node scripts/check.js` (OK), JSON-LD poprawny, podgląd lokalny.
+- **2026-09-20 (FAQ mentora)**
+  - **WHO:** Claude Code (Claude Sonnet 5) na polecenie Bartka.
+  - **WHY:** treść o płatnościach była sprzeczna z regulaminem (serwis nie obsługuje płatności).
+  - **WHAT:** w `zostan-mentorem.html` (FAQ) odpowiedź na "Jak wygląda proces płatności?" zmieniona na "Mentor rozlicza się z Uczniem poza platformą po odbytej sesji." Nagłówek pytania bez zmian.
 - **2026-09-20 (strona 404)**
   - **WHO:** Claude Code (Claude Sonnet 5) na polecenie Bartka.
   - **WHY:** dotychczasowa `404.html` była minimalna i nie wyglądała jak reszta serwisu.

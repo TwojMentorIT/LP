@@ -95,42 +95,6 @@
     .benefits { background: #f0f7ff }
     .benefit-icon { background: var(--brand-blue) }
 
-    /* === § 5 Payment - 3-column override === */
-    .mentoring { background: #fff }
-    .feature-icon { background: var(--brand-blue) }
-    .payment-grid { grid-template-columns: repeat(3, 1fr) }
-
-    /* === § 6 Referral section - two-tone (tła na kolumnach, jak mentor-intro) === */
-    .referral { position: relative; overflow: hidden; padding: 0; background: transparent; }
-    .referral .container { position: relative; z-index: 1; max-width: 100%; padding: 0 }
-    .referral-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      height: 685px;
-      align-items: stretch;
-    }
-    .referral-copy {
-      background: linear-gradient(135deg, #2f7fd0 0%, #1a5fa8 100%);
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 64px clamp(40px,5vw,80px);
-    }
-    .referral-copy .section-title { color: #fff }
-    .referral-copy p {
-      color: rgba(255,255,255,.82);
-      margin-top: 18px;
-      font-size: 16px;
-      line-height: 1.7;
-      max-width: 44ch;
-    }
-    .referral-visual { position: relative; overflow: hidden; background: #f5f7fa; }
-    .referral-photo {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: center;
-      border-radius: 0; box-shadow: none; display: block;
-    }
-
     /* === § 7 FAQ overrides === */
     .faq-chevron::before, .faq-chevron::after { background: var(--brand-blue) }
     .link-arrow { color: var(--brand-blue) }
@@ -150,8 +114,6 @@
         border-radius: 32px;
         overflow: hidden;
       }
-      .referral .container { max-width: 1180px }
-      .referral-grid { border-radius: 32px; overflow: hidden; }
     }
 
     /* === Responsive === */
@@ -162,16 +124,10 @@
       .hero-mentor-visual .hero-photo { width: 100%; height: 260px; object-fit: contain; object-position: center bottom }
       .mentor-intro-grid { grid-template-columns: 1fr; height: auto }
       .mentor-intro-photo { min-height: 320px; max-height: 420px }
-      .payment-grid { grid-template-columns: 1fr 1fr }
-      .referral-grid { grid-template-columns: 1fr; height: auto }
-      .referral-copy { padding: 40px clamp(20px,5vw,48px) }
-      .referral-visual { min-height: 360px }
     }
     @media (max-width: 680px) {
-      .payment-grid { grid-template-columns: 1fr }
       .hero { padding-bottom: 32px }
       .mentor-intro-copy { padding: 24px }
-      .referral-copy { padding: 24px }
       .cta { padding-top: 0 }
     }
   </style>
@@ -353,66 +309,6 @@
       </div>
     </section>
 
-    <!-- ======= § 5 BEZPIECZNY SYSTEM PŁATNOŚCI ======= -->
-    <section class="section mentoring hidden-lp-section" id="platnosci" aria-labelledby="payment-title" data-hidden-reason="tymczasowo ukryte na prośbę Bartka - do przywrócenia">
-      <div class="container">
-        <h2 id="payment-title" class="section-title center">Bezpieczny system płatności</h2>
-        <div class="feature-grid payment-grid">
-          <article class="feature-card reveal">
-            <span class="feature-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <line x1="12" y1="1" x2="12" y2="23" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <h3>Indywidualne stawki</h3>
-            <p>Nie narzucamy stawek. Każdy mentor ustala swoją, za jaką chce poprowadzić sesje.</p>
-          </article>
-          <article class="feature-card reveal">
-            <span class="feature-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <polyline points="9 12 11 14 15 10" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <h3>Gwarancja płatności</h3>
-            <p>Po odbytej sesji automatycznie przelewamy środki ze skarbonki ucznia do Twojej.</p>
-          </article>
-          <article class="feature-card reveal">
-            <span class="feature-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <polyline points="1 4 1 10 7 10" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M3.51 15a9 9 0 1 0 .49-4.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <h3>Zwroty</h3>
-            <p>Uczeń może odwołać bezpłatnie sesję do 24h przed jej rozpoczęciem. Gdy odwoła po tym czasie - dostajesz pełną kwotę za sesję.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======= § 6 REFERRAL: Rozwijaj bazę użytkowników ======= -->
-    <section class="section referral hidden-lp-section" id="program-referencyjny" aria-labelledby="referral-title" data-hidden-reason="tymczasowo ukryte na prośbę Bartka - do przywrócenia">
-      <div class="container">
-        <div class="referral-grid">
-          <div class="referral-copy reveal">
-            <h2 id="referral-title" class="section-title">Rozwijaj bazę użytkowników i zyskaj dodatkowy procent od transakcji</h2>
-            <p>Zaproś znajomych do rejestracji za pomocą Twojego unikalnego linku lub kodu rejestracyjnego. Za każdego użytkownika, który zarejestruje się z Twojego polecenia, otrzymasz równowartość 5% kwoty jego pierwszej transakcji na platformie.</p>
-          </div>
-          <div class="referral-visual reveal">
-            <img
-              src="/assets/img/referral-visual.png"
-              width="2876" height="3048"
-              loading="lazy"
-              alt="Mentor korzystający z programu referencyjnego - stan konta i procent od transakcji"
-              class="referral-photo"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ======= § 7 FAQ ======= -->
     <section class="section faq" id="faq" aria-labelledby="faq-mentor-title">
       <div class="container">
@@ -429,12 +325,8 @@
             <div class="faq-body"><p>Mentorem może zostać każdy doświadczony specjalista IT, który chce dzielić się wiedzą. Jesteśmy otwarci zarówno na osoby z wieloletnim doświadczeniem, jak i na tych, którzy dopiero chcą zacząć swoją przygodę z mentoringiem. Każdy kandydat przechodzi krótki proces weryfikacji.</p></div>
           </details>
           <details class="faq-item">
-            <summary>Kiedy zostaje pobrana opłata za sesję?<span class="faq-chevron" aria-hidden="true"></span></summary>
-            <div class="faq-body"><p>Opłata jest pobierana z konta ucznia w momencie rezerwacji sesji i trzymana w depozycie. Po odbyciu sesji środki są automatycznie przelewane na Twoje konto mentora.</p></div>
-          </details>
-          <details class="faq-item">
             <summary>Jak wygląda proces płatności?<span class="faq-chevron" aria-hidden="true"></span></summary>
-            <div class="faq-body"><p>Wszystkie płatności obsługiwane są przez bezpieczny system platformy. Po zakończeniu sesji środki trafiają do Twojej skarbonki, skąd możesz je wypłacić w dowolnym momencie przelewem bankowym.</p></div>
+            <div class="faq-body"><p>Mentor rozlicza się z Uczniem poza platformą po odbytej sesji.</p></div>
           </details>
           <details class="faq-item">
             <summary>Jak umówić sesję z uczniem?<span class="faq-chevron" aria-hidden="true"></span></summary>
