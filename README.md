@@ -143,6 +143,10 @@ Zasada: **każda** zmiana w repozytorium dodaje wpis na górze tej listy, w tym 
 
 Wpisy:
 
+- **2026-10-06 (zmiana składu Usługodawcy / Współadministratorów)**
+  - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
+  - **WHY:** polecenie właściciela usunięcia jednej z osób ze składu Usługodawcy i Współadministratorów.
+  - **WHAT:** usunięto tę osobę z listy Współadministratorów w `polityka-prywatnosci.html` (§1, wersja 1.1.1) i z listy Usługodawców w `regulamin.html` (§1, data aktualizacji i wejścia w życie 6 października 2026 r.); w starszym wpisie dziennika nazwa źródła polityki to teraz "v2"; w `sitemap.xml` zaktualizowano `lastmod` regulaminu. Weryfikacja: `node scripts/check.js`.
 - **2026-10-06 (polityka prywatności: weryfikacja Google OAuth)**
   - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
   - **WHY:** Google wstrzymał weryfikację aplikacji (integracja Kalendarza Google) i zażądał oświadczenia Limited Use oraz deklaracji dotyczącej AI/ML. Polityka nie zawierała ani jednego, ani drugiego, opisywała nieistniejące logowanie przez Google i Facebook oraz niezgodny z kodem aplikacji zakres danych z Google.
@@ -167,7 +171,7 @@ Wpisy:
 - **2026-09-17**
   - **WHO:** Claude Code (Claude Sonnet 5) na polecenie Bartka.
   - **WHY:** aktualizacja dokumentów prawnych zgodnie z nowymi wersjami od zespołu (usunięcie Promocji Profilu i płatności Stripe, nowa struktura polityki), zmiana adresu repozytorium na `TwojMentorIT/LP`.
-  - **WHAT:** `regulamin` zastąpiony wersją z 17.09.2026 (§1-§15); `polityka-prywatnosci` zastąpiona wersją "Igor v2" (§1-§10, m.in. Cloudflare jako podmiot przetwarzający, krótsze okresy przechowywania); usunięto nieaktualne odwołania do Promocji; ustawiono `origin` na `git@github.com:TwojMentorIT/LP.git`.
+  - **WHAT:** `regulamin` zastąpiony wersją z 17.09.2026 (§1-§15); `polityka-prywatnosci` zastąpiona wersją "v2" (§1-§10, m.in. Cloudflare jako podmiot przetwarzający, krótsze okresy przechowywania); usunięto nieaktualne odwołania do Promocji; ustawiono `origin` na `git@github.com:TwojMentorIT/LP.git`.
 - **2026-09-11**
   - **WHO:** Claude Code (Claude Sonnet 5) na polecenie Bartka.
   - **WHY:** usunięcie z polityki prywatności dostawców, z których serwis nie korzysta.
