@@ -60,7 +60,7 @@
         <div class="legal-content">
           <h1 id="policy-title" class="section-title" style="margin-bottom:32px">Polityka Prywatności</h1>
 
-          <p><strong>Wersja:</strong> 1.0.0<br><strong>Data wejścia w życie:</strong> 17.09.2026<br><strong>Ostatnia aktualizacja:</strong> 17.09.2026</p>
+          <p><strong>Wersja:</strong> 1.1.0<br><strong>Data wejścia w życie:</strong> 06.10.2026<br><strong>Ostatnia aktualizacja:</strong> 06.10.2026</p>
 
           <h2>§1 Współadministratorzy</h2>
           <ol>
@@ -78,12 +78,11 @@
               </thead>
               <tbody>
                 <tr><td>Dane konta</td><td>adres e-mail, hasło (w postaci zahaszowanej), rola (Student/Mentor), kod polecający, źródło pozyskania ("skąd o nas wiesz"), zgody wyrażone przy rejestracji (akceptacja Regulaminu, akceptacja Polityki Prywatności, opcjonalna zgoda marketingowa)</td></tr>
-                <tr><td>Dane logowania OAuth</td><td>identyfikator i dane profilowe z konta Google lub Facebook jeśli wybrano logowanie tą metodą</td></tr>
                 <tr><td>Dane profilu</td><td>imię, nazwisko, unikalny identyfikator profilu (slug), zdjęcie profilowe, data urodzenia</td></tr>
                 <tr><td>Dane profilu Mentora</td><td>biografia, specjalizacje, umiejętności, doświadczenie, linki do profili społecznościowych, języki prowadzenia zajęć, cena i czas trwania Sesji, dostępne terminy, oceny i statystyki</td></tr>
                 <tr><td>Dane profilu Studenta</td><td>biografia, cele nauki</td></tr>
                 <tr><td>Dane dotyczące Sesji</td><td>terminy, status, notatki, historia spotkań, informacje o zgłoszonych problemach/sporach</td></tr>
-                <tr><td>Dane kalendarza (dot. Mentorów)</td><td>token dostępu do Google Calendar (przechowywany w formie zaszyfrowanej), informacje o dostępności</td></tr>
+                <tr><td>Dane z konta Google (dot. Mentorów, którzy połączyli Kalendarz Google)</td><td>adres e-mail konta Google, token dostępu i token odświeżania (przechowywane w formie zaszyfrowanej), identyfikatory wydarzeń utworzonych przez Serwis w Kalendarzu Google oraz linki do spotkań Google Meet. Szczegóły w §5</td></tr>
                 <tr><td>Komunikacja</td><td>wiadomości wysłane w czacie wewnętrznym Serwisu, wraz z ewentualnymi załącznikami</td></tr>
                 <tr><td>Opinie</td><td>treść i ocena wystawiona Mentorowi</td></tr>
                 <tr><td>Zgłoszenia</td><td>treść zgłoszeń dotyczących Sesji, zgłoszeń błędów lub uwag</td></tr>
@@ -92,6 +91,7 @@
             </table>
           </div>
           <p>Nie wszystkie dane są wymagane. Zakres danych zależy od funkcji Serwisu, z której korzystasz.</p>
+          <p>Podanie danych jest dobrowolne, ale adres e-mail, hasło, rola oraz akceptacja Regulaminu i Polityki Prywatności są wymogiem umownym, bez którego nie można założyć Konta ani korzystać z Serwisu. Podanie pozostałych danych (np. zdjęcia profilowego, biografii, linków do profili społecznościowych) oraz połączenie Kalendarza Google są opcjonalne, ale bez nich niektóre funkcje Serwisu mogą być niedostępne.</p>
 
           <h2>§3 Cele i podstawy prawne przetwarzania</h2>
           <p>Dane wykorzystujemy w szczególności do:</p>
@@ -101,20 +101,21 @@
                 <tr><th>Cel przetwarzania</th><th>Podstawa prawna (RODO)</th></tr>
               </thead>
               <tbody>
-                <tr><td>Założenie i prowadzenie Konta, świadczenie usług Serwisu</td><td>Wykonanie umowy</td></tr>
-                <tr><td>Umożliwienie Rezerwacji i realizacji Sesji</td><td>Wykonanie umowy</td></tr>
-                <tr><td>Integracja z Google Calendar / generowanie spotkań Google Meet</td><td>Wykonanie umowy</td></tr>
-                <tr><td>Prowadzenie rankingu i wyszukiwarki Mentorów</td><td>Wykonanie umowy oraz nasz uzasadniony interes</td></tr>
-                <tr><td>Obsługa zgłoszeń, sporów i reklamacji</td><td>Wykonanie umowy oraz nasz uzasadniony interes</td></tr>
-                <tr><td>Kontakt e-mailowy związany z realizacją usług (potwierdzenia, powiadomienia)</td><td>Wykonanie umowy</td></tr>
-                <tr><td>Komunikacja marketingowa</td><td>Dobrowolna zgoda - wyrażana przez osobny, opcjonalny checkbox, niezależnie od akceptacji Regulaminu i Polityki Prywatności</td></tr>
-                <tr><td>Zapewnienie bezpieczeństwa Serwisu, przeciwdziałanie nadużyciom</td><td>Wykonanie umowy oraz nasz uzasadniony interes</td></tr>
-                <tr><td>Ustalenie, dochodzenie lub obrona roszczeń, w tym wynikających z Regulaminu</td><td>Wykonanie umowy</td></tr>
-                <tr><td>Wypełnienie obowiązków prawnych</td><td>Wykonanie umowy</td></tr>
+                <tr><td>Założenie i prowadzenie Konta, świadczenie usług Serwisu</td><td>Wykonanie umowy (art. 6 ust. 1 lit. b RODO)</td></tr>
+                <tr><td>Umożliwienie Rezerwacji i realizacji Sesji</td><td>Wykonanie umowy (art. 6 ust. 1 lit. b RODO)</td></tr>
+                <tr><td>Integracja z Google Calendar / generowanie spotkań Google Meet</td><td>Wykonanie umowy (art. 6 ust. 1 lit. b RODO)</td></tr>
+                <tr><td>Prowadzenie rankingu i wyszukiwarki Mentorów</td><td>Wykonanie umowy (art. 6 ust. 1 lit. b RODO) oraz nasz uzasadniony interes (art. 6 ust. 1 lit. f RODO)</td></tr>
+                <tr><td>Obsługa zgłoszeń, sporów i reklamacji</td><td>Wykonanie umowy (art. 6 ust. 1 lit. b RODO) oraz nasz uzasadniony interes (art. 6 ust. 1 lit. f RODO)</td></tr>
+                <tr><td>Kontakt e-mailowy związany z realizacją usług (potwierdzenia, powiadomienia)</td><td>Wykonanie umowy (art. 6 ust. 1 lit. b RODO)</td></tr>
+                <tr><td>Komunikacja marketingowa</td><td>Dobrowolna zgoda (art. 6 ust. 1 lit. a RODO) - wyrażana przez osobny, opcjonalny checkbox, niezależnie od akceptacji Regulaminu i Polityki Prywatności</td></tr>
+                <tr><td>Zapewnienie bezpieczeństwa Serwisu, przeciwdziałanie nadużyciom</td><td>Wykonanie umowy (art. 6 ust. 1 lit. b RODO) oraz nasz uzasadniony interes (art. 6 ust. 1 lit. f RODO)</td></tr>
+                <tr><td>Ustalenie, dochodzenie lub obrona roszczeń, w tym wynikających z Regulaminu</td><td>Nasz uzasadniony interes (art. 6 ust. 1 lit. f RODO)</td></tr>
+                <tr><td>Wypełnienie obowiązków prawnych</td><td>Obowiązek prawny (art. 6 ust. 1 lit. c RODO)</td></tr>
               </tbody>
             </table>
           </div>
           <p>Wykorzystujemy dane tylko w zakresie potrzebnym do realizacji określonego celu.</p>
+          <p>Kolejność Mentorów w wyszukiwarce jest ustalana automatycznie, m.in. na podstawie dopasowania specjalizacji i umiejętności do wyszukiwania, ocen i liczby opinii, aktywności w Serwisie, liczby odbytych Sesji, liczby dodań do ulubionych oraz kompletności profilu. Ranking wpływa wyłącznie na kolejność wyświetlania profili. Nie podejmujemy decyzji opartych wyłącznie na zautomatyzowanym przetwarzaniu, w tym profilowaniu, które wywoływałyby wobec Ciebie skutki prawne lub w podobny sposób istotnie na Ciebie wpływały (art. 22 RODO).</p>
 
           <h2>§4 Komu możemy przekazywać dane?</h2>
           <p>W celu realizacji usług Współadministratorzy korzystają z poniższych dostawców, którym powierzono przetwarzanie danych osobowych w niezbędnym zakresie:</p>
@@ -124,8 +125,7 @@
                 <tr><th>Dostawca</th><th>Rola / zakres</th><th>Lokalizacja przetwarzania</th></tr>
               </thead>
               <tbody>
-                <tr><td>Google (Google LLC / Google Ireland)</td><td>logowanie OAuth (opcjonalnie) oraz integracja Google Calendar/Google Meet (dot. Mentorów)</td><td>UE / USA</td></tr>
-                <tr><td>Facebook (Meta)</td><td>logowanie OAuth (opcjonalnie)</td><td>USA</td></tr>
+                <tr><td>Google (Google LLC / Google Ireland)</td><td>integracja Google Calendar / Google Meet (dot. Mentorów, opcjonalnie)</td><td>UE / USA</td></tr>
                 <tr><td>Resend</td><td>wysyłka wiadomości e-mail (transakcyjnych i systemowych)</td><td>USA</td></tr>
                 <tr><td>Cloudinary</td><td>przechowywanie i przetwarzanie plików multimedialnych (np. zdjęcia profilowe)</td><td>USA</td></tr>
                 <tr><td>Railway</td><td>dostawca infrastruktury hostingowej aplikacji</td><td>UE</td></tr>
@@ -135,15 +135,32 @@
           </div>
           <p>Dane mogą zostać ponadto udostępnione podmiotom uprawnionym na podstawie przepisów prawa (np. organom podatkowym, organom ścigania) na ich uzasadnione żądanie.</p>
           <p>Dane mogą być również przekazywane podmiotom świadczącym usługi prawne lub księgowe oraz organom publicznym, jeżeli jest to wymagane lub dozwolone przez obowiązujące przepisy.</p>
-          <p>Jeżeli dane są przekazywane poza Europejski Obszar Gospodarczy, stosujemy odpowiednie mechanizmy ochrony danych.</p>
+          <p>Jeżeli dane są przekazywane poza Europejski Obszar Gospodarczy, odbywa się to na podstawie decyzji Komisji Europejskiej stwierdzającej odpowiedni stopień ochrony, w tym EU-US Data Privacy Framework (art. 45 RODO), albo standardowych klauzul umownych zatwierdzonych przez Komisję Europejską (art. 46 ust. 2 lit. c RODO), w zależności od dostawcy. Kopię stosowanych zabezpieczeń można uzyskać, pisząc na adres podany w §1.</p>
 
-          <h2>§5 Cookies i podobne technologie</h2>
+          <h2>§5 Dane z Google (Kalendarz Google i Google Meet)</h2>
+          <ol>
+            <li>Połączenie Kalendarza Google jest opcjonalne i dostępne tylko dla Mentorów. Mentor łączy kalendarz samodzielnie w ustawieniach integracji w Serwisie i może go w każdej chwili odłączyć.</li>
+            <li>Serwis prosi Google wyłącznie o następujące uprawnienia: <strong>calendar.events</strong> (tworzenie, aktualizacja i usuwanie wydarzeń w kalendarzu), <strong>openid</strong> i <strong>email</strong> (identyfikacja połączonego konta Google i jego adres e-mail).</li>
+            <li>Dane otrzymane z Google wykorzystujemy wyłącznie do tego, by po Rezerwacji Sesji utworzyć wydarzenie w głównym Kalendarzu Google Mentora wraz z linkiem do spotkania Google Meet, zaktualizować je w razie potrzeby oraz usunąć je po odwołaniu Sesji. Wydarzenie zawiera nazwę Sesji, termin rozpoczęcia i zakończenia oraz adres e-mail Studenta jako gościa. Serwis nie wysyła z Google zaproszeń do gości, a link do spotkania przekazuje uczestnikom samodzielnie.</li>
+            <li>Serwis nie odczytuje innych wydarzeń z Kalendarza Google Mentora ani innych danych z jego konta Google niż wymienione w ust. 2.</li>
+            <li>Danych otrzymanych z Google nie sprzedajemy, nie wykorzystujemy do celów reklamowych, w tym do reklamy spersonalizowanej, ani do oceny zdolności kredytowej. Nie przekazujemy ich osobom trzecim, chyba że jest to niezbędne do działania funkcji opisanej w ust. 3, do zapewnienia bezpieczeństwa, do wypełnienia obowiązku prawnego lub w ramach połączenia, przejęcia albo sprzedaży przedsiębiorstwa.</li>
+            <li>Ludzie nie odczytują danych otrzymanych z Google, chyba że Mentor wyrazi na to wyraźną zgodę w odniesieniu do konkretnych danych, jest to niezbędne ze względów bezpieczeństwa (np. wyjaśnienie nadużycia), wymagają tego przepisy prawa albo dane zostały zagregowane i zanonimizowane na potrzeby wewnętrznego działania Serwisu.</li>
+            <li>Danych otrzymanych z Google nie przekazujemy do żadnych narzędzi ani usług sztucznej inteligencji lub uczenia maszynowego i nie wykorzystujemy ich, w postaci surowej, zagregowanej, zanonimizowanej ani pochodnej, do tworzenia, trenowania ani ulepszania modeli sztucznej inteligencji lub uczenia maszynowego (zob. §6).</li>
+            <li>Tokeny dostępu i odświeżania są przechowywane w formie zaszyfrowanej. Po odłączeniu Kalendarza Google w Serwisie lub po usunięciu Konta unieważniamy uprawnienia w Google i usuwamy z Serwisu tokeny oraz adres e-mail połączonego konta Google. Wydarzenia utworzone wcześniej w Kalendarzu Google pozostają w kalendarzu Mentora i może on je usunąć samodzielnie. Dostęp Serwisu można też w każdej chwili cofnąć w ustawieniach konta Google: <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">https://myaccount.google.com/permissions</a>.</li>
+            <li>Wykorzystanie i przekazywanie przez TwójMentor.IT do jakiejkolwiek innej aplikacji informacji otrzymanych z interfejsów API Google jest zgodne z <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, w tym z wymogami Limited Use.</li>
+            <li lang="en"><strong>Limited Use statement:</strong> TwójMentor.IT's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements. The use of raw or derived user data received from Google Workspace APIs will adhere to the Google User Data Policy, including the Limited Use requirements. Google user data is never transferred to third-party AI/ML services and is never used to create, train or improve AI/ML models.</li>
+          </ol>
+
+          <h2>§6 Sztuczna inteligencja</h2>
+          <p>Serwis nie korzysta z modeli ani usług sztucznej inteligencji lub uczenia maszynowego do przetwarzania danych osobowych Użytkowników. Nie integrujemy się z zewnętrznymi dostawcami AI, agregatorami ani bramkami modeli i nie uruchamiamy własnych modeli AI (hostowanych samodzielnie lub offline). Żadne dane Użytkowników, w tym dane otrzymane z Google, nie są przekazywane do usług AI ani wykorzystywane do trenowania modeli AI. Pojawiające się w Serwisie określenie "AI" oznacza wyłącznie dziedzinę, w której specjalizują się niektórzy Mentorzy.</p>
+
+          <h2>§7 Cookies i podobne technologie</h2>
           <p>Platforma korzysta z plików cookies i podobnych technologii, które są niezbędne do jej prawidłowego działania, w szczególności do logowania, utrzymania sesji i zapewnienia bezpieczeństwa.</p>
           <p>Możemy również wykorzystywać podstawowe informacje o wydajności Platformy, aby monitorować jej prawidłowe działanie. Informacje te nie są wykorzystywane do śledzenia użytkowników.</p>
           <p>Obecnie nie wykorzystujemy opcjonalnych cookies analitycznych ani marketingowych wymagających zgody. Jeżeli w przyszłości je wdrożymy, poinformujemy o tym użytkowników i uzyskamy wymaganą zgodę przed ich użyciem.</p>
           <p>Użytkownik może również zarządzać cookies za pomocą ustawień swojej przeglądarki.</p>
 
-          <h2>§6 Jak długo przechowujemy dane?</h2>
+          <h2>§8 Jak długo przechowujemy dane?</h2>
           <p>Dane przechowujemy tak długo, jak są potrzebne do realizacji celu, dla którego zostały zebrane, lub przez okres wymagany obowiązującymi przepisami.</p>
           <div class="table-wrap">
             <table>
@@ -151,17 +168,17 @@
                 <tr><th>Kategoria danych</th><th>Okres przechowywania</th></tr>
               </thead>
               <tbody>
-                <tr><td>Dane Konta</td><td>przez czas posiadania Konta w Serwisie oraz przez okres 14 dni po jego usunięciu, w celu obrony przed roszczeniami</td></tr>
+                <tr><td>Dane Konta</td><td>przez czas posiadania Konta w Serwisie, a po jego usunięciu w zakresie niezbędnym do ustalenia, dochodzenia lub obrony roszczeń, do upływu okresu ich przedawnienia</td></tr>
                 <tr><td>Treści komunikacji (czat)</td><td>rok</td></tr>
-                <tr><td>Dane dotyczące zgłoszeń i sporów</td><td>przez okres 14 dni od zakończenia postępowania, w celu obrony przed roszczeniami</td></tr>
-                <tr><td>Tokeny integracji Google Calendar</td><td>do czasu odłączenia integracji przez Mentora lub usunięcia Konta</td></tr>
+                <tr><td>Dane dotyczące zgłoszeń i sporów</td><td>do upływu okresu przedawnienia roszczeń związanych ze zgłoszeniem lub sporem</td></tr>
+                <tr><td>Tokeny i adres e-mail połączonego konta Google</td><td>do czasu odłączenia integracji przez Mentora lub usunięcia Konta (zob. §5 ust. 8)</td></tr>
                 <tr><td>Dane techniczne / logi</td><td>14 dni</td></tr>
               </tbody>
             </table>
           </div>
           <p>Po zakończeniu okresu przechowywania dane są usuwane lub zanonimizowane, chyba że istnieje podstawa do ich dalszego przechowywania.</p>
 
-          <h2>§7 Twoje prawa</h2>
+          <h2>§9 Twoje prawa</h2>
           <p>Każdemu Użytkownikowi przysługuje prawo do:</p>
           <ol>
             <li>dostępu do swoich danych osobowych;</li>
@@ -174,13 +191,13 @@
             <li>wniesienia skargi - użytkownik może złożyć skargę do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa, uodo.gov.pl).</li>
           </ol>
 
-          <h2>§8 Bezpieczeństwo danych</h2>
+          <h2>§10 Bezpieczeństwo danych</h2>
           <p>Współadministratorzy stosują środki techniczne i organizacyjne mające na celu ochronę danych osobowych, w tym: szyfrowanie połączenia (HTTPS/TLS), szyfrowanie tokenów dostępu do integracji zewnętrznych (Google Calendar), przechowywanie haseł w formie zahaszowanej, mechanizmy ograniczające liczbę żądań (rate limiting) chroniące przed nadużyciami, oraz zasady bezpieczeństwa nagłówków HTTP (m.in. Content Security Policy, HSTS). Zadania w tym zakresie są rozdzielone między Współadministratorów.</p>
 
-          <h2>§9 Osoby poniżej 18 lat</h2>
+          <h2>§11 Osoby poniżej 18 lat</h2>
           <p>Serwis jest przeznaczony wyłącznie dla osób, które ukończyły 18 lat. Nie jest to usługa przeznaczona dla osób poniżej 18 roku życia. Jeżeli dowiemy się, że osoba poniżej 18 lat korzysta z Serwisu wbrew tym zasadom, możemy podjąć odpowiednie działania, w tym usunąć konto.</p>
 
-          <h2>§10 Zmiany Polityki Prywatności</h2>
+          <h2>§12 Zmiany Polityki Prywatności</h2>
           <p>Współadministratorzy zastrzegają sobie prawo do wprowadzania zmian w niniejszej Polityce Prywatności, w szczególności w związku ze zmianą zakresu przetwarzanych danych, zmianą wykorzystywanych dostawców zewnętrznych, zmianą podziału odpowiedzialności między Współadministratorami lub zmianą przepisów prawa. O istotnych zmianach Użytkownicy zostaną poinformowani drogą elektroniczną lub poprzez komunikat w Serwisie.</p>
         </div>
       </div>

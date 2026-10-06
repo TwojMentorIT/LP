@@ -143,6 +143,11 @@ Zasada: **każda** zmiana w repozytorium dodaje wpis na górze tej listy, w tym 
 
 Wpisy:
 
+- **2026-10-06 (polityka prywatności: weryfikacja Google OAuth)**
+  - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
+  - **WHY:** Google wstrzymał weryfikację aplikacji (integracja Kalendarza Google) i zażądał oświadczenia Limited Use oraz deklaracji dotyczącej AI/ML. Polityka nie zawierała ani jednego, ani drugiego, opisywała nieistniejące logowanie przez Google i Facebook oraz niezgodny z kodem aplikacji zakres danych z Google.
+  - **WHAT:** `polityka-prywatnosci.html` w wersji 1.1.0: usunięto logowanie OAuth Google/Facebook (aplikacja ma tylko logowanie e-mailem i hasłem); opis danych z Google zgodny z kodem aplikacji (scope'y `calendar.events`, `openid`, `email`, adres e-mail konta Google, tokeny, identyfikatory wydarzeń, linki Meet); nowy §5 o danych z Google (cel, brak odczytu innych wydarzeń, brak sprzedaży i reklam, brak odczytu przez ludzi, usuwanie i unieważnianie dostępu, oświadczenie Limited Use po polsku i angielsku); nowy §6 o braku AI; podstawy prawne z numerami artykułów RODO (obowiązek prawny lit. c, roszczenia lit. f); informacja o wymogu podania danych i o automatycznym rankingu (art. 22); mechanizmy transferu poza EOG; okres przechowywania na potrzeby roszczeń do upływu przedawnienia zamiast 14 dni; dotychczasowe §5-§10 to teraz §7-§12. W `sitemap.xml` zaktualizowano `lastmod`. Lista dostawców (§4) poza usunięciem Facebooka bez zmian, na polecenie właściciela. Weryfikacja: `node scripts/check.js`.
+
 - **2026-09-20 (usunięcie treści o płatnościach)**
   - **WHO:** Claude Code (Claude Sonnet 5) na polecenie Bartka.
   - **WHY:** regulamin stwierdza, że serwis nie obsługuje płatności, a LP nadal opisywała płatności, skarbonkę i prowizję od transakcji (sprzeczność prawna i wprowadzanie w błąd).
