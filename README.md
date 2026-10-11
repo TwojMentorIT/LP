@@ -143,6 +143,10 @@ Zasada: **każda** zmiana w repozytorium dodaje wpis na górze tej listy, w tym 
 
 Wpisy:
 
+- **2026-10-11 (pliki `src/baner.jpeg` i `src/logo.png`)**
+  - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Tomasza.
+  - **WHY:** potrzebne publiczne adresy baneru i logo pod domeną serwisu (`https://twojmentor.it/src/baner.jpeg`, `https://twojmentor.it/src/logo.png`).
+  - **WHAT:** dodano katalog `src/` z plikami `baner.jpeg` i `logo.png`. Żadna strona ich nie używa, treść stron bez zmian. Weryfikacja: `node scripts/check.js`.
 - **2026-10-11 (przycisk "Zaloguj się" w nagłówku pozostałych stron)**
   - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
   - **WHY:** ujednolicenie wspólnego nagłówka po zmianie na LP ucznia i mentora; wszystkie strony mają prowadzić do logowania w aplikacji.
