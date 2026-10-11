@@ -143,6 +143,10 @@ Zasada: **każda** zmiana w repozytorium dodaje wpis na górze tej listy, w tym 
 
 Wpisy:
 
+- **2026-10-11 (przycisk "Zaloguj się" w nagłówku pozostałych stron)**
+  - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
+  - **WHY:** ujednolicenie wspólnego nagłówka po zmianie na LP ucznia i mentora; wszystkie strony mają prowadzić do logowania w aplikacji.
+  - **WHAT:** w `faq.html`, `regulamin.html`, `polityka-prywatnosci.html`, `mapa-strony.html` i `404.html` przycisk "Zapisz się" w nagłówku (otwierający modal zapisu) zamieniono na link "Zaloguj się" do `https://app.twojmentor.it/login`. Treść regulaminu i polityki prywatności bez zmian. Modal MailerLite pozostaje w kodzie stron, ale żaden przycisk go już nie otwiera. Weryfikacja: `node scripts/check.js` (OK).
 - **2026-10-11 (przyciski "Zaloguj się" na LP ucznia i mentora)**
   - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
   - **WHY:** aplikacja działa produkcyjnie, więc główne przyciski na stronach ucznia i mentora mają prowadzić do logowania w aplikacji zamiast do zapisu na listę oczekujących.
