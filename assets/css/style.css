@@ -136,6 +136,7 @@ h1,h2,h3{line-height:1.15;letter-spacing:-.02em;font-weight:800}
 /* ===== Mentors: 1:1 copy of the app's "Proponowani" carousel (src/components/app/search/mentor-carousel.tsx)
    and MentorCard (src/components/cards/mentor-card.tsx). Values are the app's Tailwind tokens. ===== */
 .mentors{
+  padding-bottom:0;
   background:#fff;
   --mc-heading:#101317;--mc-paragraph:#52575f;--mc-border:#d0d4db;--mc-neutral-20:#eff1f3;
   --mc-primary:#7337ff;--mc-primary-light:#f1ebff;
