@@ -38,7 +38,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="image" href="/assets/img/Hero_1.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/style.css" />
   <style>
     .hero-grid { min-height: 460px; align-items: start }
@@ -168,6 +168,30 @@
       </div>
     </section>
 
+    <!-- ======= NASI MENTORZY ======= -->
+    <!-- Cards are rendered by main.js from the app's public promoted-mentors feed; the section stays hidden until at least one arrives. -->
+    <section class="section mentors" id="mentorzy" aria-labelledby="mentors-title" hidden>
+      <div class="container">
+        <div class="mc-head">
+          <h2 id="mentors-title" class="mc-title">Nasi mentorzy</h2>
+          <div class="mc-nav" id="mentorsNav">
+            <button type="button" class="mc-nav-btn" id="prevMentor" aria-label="Poprzedni mentor">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Poprzedni</span>
+            </button>
+            <button type="button" class="mc-nav-btn" id="nextMentor" aria-label="Następny mentor">
+              <span>Następny</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="mc-viewport" id="mentorsViewport">
+          <div class="mc-track" id="mentorsTrack"></div>
+        </div>
+      </div>
+    </section>
+
     <!-- ======= ŁĄCZYMY MENTORÓW I UCZNIÓW ======= -->
     <section class="section connect" id="o-nas" aria-labelledby="connect-title">
       <div class="container connect-grid">
@@ -252,113 +276,6 @@
             <div class="how-media">
               <img src="/assets/img/Zdobywaj_wiedze.png" width="600" height="434" loading="lazy" alt="Wideorozmowa mentora z uczniem podczas sesji online" />
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======= NASI MENTORZY ======= -->
-    <section class="section mentors" id="mentorzy" aria-labelledby="mentors-title" style="display:none">
-      <div class="container">
-        <div class="mentors-head">
-          <h2 id="mentors-title" class="section-title">Nasi mentorzy</h2>
-          <div class="slider-nav">
-            <button class="slider-btn" id="prevMentor" aria-label="Poprzedni mentor">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span>Poprzedni</span>
-            </button>
-            <button class="slider-btn" id="nextMentor" aria-label="Następny mentor">
-              <span>Następny</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="mentors-track-wrap">
-          <div class="mentors-track" id="mentorsTrack">
-            <!-- Michał -->
-            <article class="mentor-card">
-              <button class="fav-btn" aria-label="Dodaj do ulubionych">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.5-9.3-9C1.2 8 2.5 4.5 6 4.5c2 0 3.2 1.3 4 2.4.8-1.1 2-2.4 4-2.4 3.5 0 4.8 3.5 3.3 6.5C19 15.5 12 20 12 20z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-              </button>
-              <div class="mentor-top">
-                <img src="/assets/img/avatar-michal.webp" width="64" height="64" loading="lazy" alt="Michał - Frontend Developer i UX Researcher" class="mentor-avatar" />
-                <div>
-                  <h3 class="mentor-name">Michał</h3>
-                  <p class="mentor-role">Frontend Developer<br>UX Researcher</p>
-                  <p class="mentor-rate"><span class="stars">★</span> 5.0 <span class="reviews">(22)</span></p>
-                </div>
-              </div>
-              <ul class="mentor-tags">
-                <li class="tag tag-js">JavaScript</li>
-                <li class="tag tag-html">HTML</li>
-                <li class="tag">Frontend</li>
-                <li class="tag">Angular</li>
-                <li class="tag tag-more">+4</li>
-              </ul>
-              <p class="mentor-bio">Cześć! Jestem doświadczonym mentorem IT z bogatym doświadczeniem w programowaniu i rozwoju oprogramowania. Specjalizuję się w językach takich jak Python, Java i JavaScript. Moja misja to nie tylko przek...</p>
-              <div class="mentor-footer">
-                <div class="mentor-price"><strong>100 Ptk</strong> /sesja</div>
-                <p class="mentor-free"><span aria-hidden="true">🎁</span> Pierwsza sesja darmowa</p>
-              </div>
-              <p class="mentor-term">Najbliższy termin: <strong>Wtorek, 25.10</strong></p>
-            </article>
-
-            <!-- Anna -->
-            <article class="mentor-card">
-              <button class="fav-btn" aria-label="Dodaj do ulubionych">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.5-9.3-9C1.2 8 2.5 4.5 6 4.5c2 0 3.2 1.3 4 2.4.8-1.1 2-2.4 4-2.4 3.5 0 4.8 3.5 3.3 6.5C19 15.5 12 20 12 20z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-              </button>
-              <div class="mentor-top">
-                <img src="/assets/img/avatar-anna.webp" width="64" height="64" loading="lazy" alt="Anna - Frontend Developer" class="mentor-avatar" />
-                <div>
-                  <h3 class="mentor-name">Anna</h3>
-                  <p class="mentor-role">Frontend Developer<br>UX/UI Designer</p>
-                  <p class="mentor-rate"><span class="stars">★</span> 5.0 <span class="reviews">(22)</span></p>
-                </div>
-              </div>
-              <ul class="mentor-tags">
-                <li class="tag tag-js">JavaScript</li>
-                <li class="tag tag-html">HTML</li>
-                <li class="tag">Frontend</li>
-                <li class="tag">Angular</li>
-                <li class="tag tag-more">+4</li>
-              </ul>
-              <p class="mentor-bio">Cześć! Jestem doświadczonym mentorem IT z bogatym doświadczeniem w programowaniu i rozwoju oprogramowania. Specjalizuję się w językach takich jak Python, Java i JavaScript. Moja misja to nie tylko przek...</p>
-              <div class="mentor-footer">
-                <div class="mentor-price"><strong>90 Ptk</strong> /sesja</div>
-                <p class="mentor-free"><span aria-hidden="true">🎁</span> Pierwsza sesja darmowa</p>
-              </div>
-              <p class="mentor-term">Najbliższy termin: <strong>Wtorek, 25.10</strong></p>
-            </article>
-
-            <!-- Piotr -->
-            <article class="mentor-card">
-              <button class="fav-btn" aria-label="Dodaj do ulubionych">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.5-9.3-9C1.2 8 2.5 4.5 6 4.5c2 0 3.2 1.3 4 2.4.8-1.1 2-2.4 4-2.4 3.5 0 4.8 3.5 3.3 6.5C19 15.5 12 20 12 20z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-              </button>
-              <div class="mentor-top">
-                <img src="/assets/img/avatar-piotr.webp" width="64" height="64" loading="lazy" alt="Piotr - Frontend Developer" class="mentor-avatar" />
-                <div>
-                  <h3 class="mentor-name">Piotr</h3>
-                  <p class="mentor-role">Frontend Developer<br>Backend Developer</p>
-                  <p class="mentor-rate"><span class="stars">★</span> 5.0 <span class="reviews">(21)</span></p>
-                </div>
-              </div>
-              <ul class="mentor-tags">
-                <li class="tag tag-js">JavaScript</li>
-                <li class="tag tag-html">HTML</li>
-                <li class="tag">Python</li>
-                <li class="tag">Django</li>
-                <li class="tag tag-more">+4</li>
-              </ul>
-              <p class="mentor-bio">Cześć! Jestem doświadczonym mentorem IT z bogatym doświadczeniem w programowaniu i rozwoju oprogramowania. Specjalizuję się w językach takich jak Python, Java i JavaScript. Moja misja to nie tylko przek...</p>
-              <div class="mentor-footer">
-                <div class="mentor-price"><strong>150 Ptk</strong> /sesja</div>
-                <p class="mentor-free"><span aria-hidden="true">🎁</span> Pierwsza sesja darmowa</p>
-              </div>
-              <p class="mentor-term">Najbliższy termin: <strong>Wtorek, 25.10</strong></p>
-            </article>
           </div>
         </div>
       </div>

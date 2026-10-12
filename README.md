@@ -40,8 +40,9 @@ Technologia: statyczny HTML, jeden plik CSS, jeden plik JS (vanilla, bez zależn
   CNAME                         domena własna (twojmentor.it), NIE usuwaj
   .nojekyll                     wyłącza Jekyll na GitHub Pages, NIE usuwaj
   assets/css/style.css          wspólne style
-  assets/js/main.js             menu mobilne, animacje reveal, slider mentorów, modal zapisu, akordeon FAQ
+  assets/js/main.js             menu mobilne, animacje reveal, karuzela mentorów (dane z API aplikacji), modal zapisu, akordeon FAQ
   assets/img/                   grafiki (webp/png/svg), og-image.jpg
+  assets/img/tech/              ikony technologii skopiowane z aplikacji (pigułki w kartach mentorów)
   scripts/serve.js              lokalny podgląd emulujący routing GitHub Pages
   scripts/check.js              walidator zasad z tego pliku
   README.md, CLAUDE.md, AGENTS.md   dokumentacja i wskazówki dla agentów
@@ -143,6 +144,10 @@ Zasada: **każda** zmiana w repozytorium dodaje wpis na górze tej listy, w tym 
 
 Wpisy:
 
+- **2026-10-12 (karuzela "Nasi mentorzy" na LP ucznia)**
+  - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
+  - **WHY:** na LP ucznia, nad sekcją "Łączymy mentorów i uczniów", ma być karuzela z prawdziwymi profilami mentorów, taka sama jak "Proponowani" w wyszukiwarce aplikacji. Dotychczasowa sekcja "Nasi mentorzy" była ukryta (`display:none`) i zawierała wymyślone karty (oceny, ceny, terminy), których nie wolno pokazywać.
+  - **WHAT:** w `index.html` sekcja `#mentorzy` przeniesiona nad `#o-nas`, ukryta atrybutem `hidden` i bez kart w HTML; karty buduje `assets/js/main.js` z publicznego API aplikacji `https://app.twojmentor.it/api/public/promoted-mentors` (mentorzy z aktywną promocją, maks. 9). Sekcja pojawia się dopiero, gdy przyjdzie co najmniej jeden profil; błąd API zostawia ją ukrytą. Karuzela i karta są kopią 1:1 komponentów aplikacji (`mentor-carousel.tsx`, `mentor-card.tsx`): 2 karty na desktopie i 1 na telefonie z widocznym brzegiem kolejnej, przewijanie gestem (scroll-snap), na ekranach od 768 px także przyciskami "Poprzedni/Następny" (na telefonie przyciski są ukryte, na polecenie właściciela), font Poppins (dodany do linku Google Fonts), pigułki technologii z ikonami dopasowywane do szerokości z "+N". Ikony to eksport ikon aplikacji do `assets/img/tech/` (osadzone bitmapy przeskalowane do 64 px, razem ok. 300 KB). Celowo bez ceny sesji (sekcja 9, punkt 2) i bez serca "ulubione" (w aplikacji widzi je tylko zalogowany). Linki i obrazki z API przechodzą walidację (tylko https, linki tylko do `app.twojmentor.it`), treść wstawiana jako tekst. Z `style.css` usunięto style starych kart. Wymaga wdrożenia zmiany w aplikacji (nagłówek CORS dla `twojmentor.it` i pola `specializationLabel`, `skillTags`); do tego czasu sekcja pozostaje ukryta. Weryfikacja: `node scripts/check.js` (OK), podgląd lokalny z danymi testowymi na desktopie i telefonie (bez poziomego przewijania).
 - **2026-10-11 (pliki `src/baner.jpeg` i `src/logo.png`)**
   - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Tomasza.
   - **WHY:** potrzebne publiczne adresy baneru i logo pod domeną serwisu (`https://twojmentor.it/src/baner.jpeg`, `https://twojmentor.it/src/logo.png`).
