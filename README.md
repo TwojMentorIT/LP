@@ -144,6 +144,10 @@ Zasada: **każda** zmiana w repozytorium dodaje wpis na górze tej listy, w tym 
 
 Wpisy:
 
+- **2026-10-12 (grafika hero LP ucznia nieucięta na telefonie)**
+  - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
+  - **WHY:** na ekranach do 980 px grafika hero w `index.html` była przycinana od dołu (`object-fit: cover` w pudełku o wysokości 260 px), więc zdjęcia mentorów i ikony technologii były ucięte.
+  - **WHAT:** w `index.html` reguła mobilna `.hero-photo` używa `object-fit: contain` i `object-position: center bottom`, tak samo jak LP mentora. Wysokość pudełka 260 px bez zmian, więc tekst hero nadal zaczyna się w tym samym miejscu na obu stronach. Weryfikacja: `node scripts/check.js`, podgląd lokalny w szerokości telefonu.
 - **2026-10-12 (karuzela "Nasi mentorzy" bez dolnego paddingu)**
   - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
   - **WHY:** pod karuzelą "Nasi mentorzy" zostawał pełny dolny padding sekcji, przez co odstęp do kolejnej sekcji był za duży.
