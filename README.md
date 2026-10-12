@@ -144,6 +144,10 @@ Zasada: **każda** zmiana w repozytorium dodaje wpis na górze tej listy, w tym 
 
 Wpisy:
 
+- **2026-10-12 (karuzela "Nasi mentorzy" bez dolnego paddingu)**
+  - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
+  - **WHY:** pod karuzelą "Nasi mentorzy" zostawał pełny dolny padding sekcji, przez co odstęp do kolejnej sekcji był za duży.
+  - **WHAT:** w `assets/css/style.css` reguła `.mentors` dostała `padding-bottom:0`, nadpisując dolny padding z `.section`. Górny padding sekcji i wewnętrzny odstęp `.mc-viewport` (24 px, miejsce na cień kart) bez zmian. Weryfikacja: `node scripts/check.js`.
 - **2026-10-12 (karuzela "Nasi mentorzy" na LP ucznia)**
   - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
   - **WHY:** na LP ucznia, nad sekcją "Łączymy mentorów i uczniów", ma być karuzela z prawdziwymi profilami mentorów, taka sama jak "Proponowani" w wyszukiwarce aplikacji. Dotychczasowa sekcja "Nasi mentorzy" była ukryta (`display:none`) i zawierała wymyślone karty (oceny, ceny, terminy), których nie wolno pokazywać.
