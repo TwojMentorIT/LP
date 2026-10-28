@@ -144,6 +144,10 @@ Zasada: **każda** zmiana w repozytorium dodaje wpis na górze tej listy, w tym 
 
 Wpisy:
 
+- **2026-10-28 (dopisek "wersja Alfa aplikacji" w hero LP ucznia)**
+  - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
+  - **WHY:** odwiedzający ma od razu wiedzieć, że aplikacja jest we wczesnej wersji Alfa.
+  - **WHAT:** w `index.html` pod nagłówkiem hero dodano akapit `.hero-version` z tekstem "(wersja Alfa aplikacji)"; w `assets/css/style.css` nowa reguła `.hero-version` (16 px, pogrubienie 600, kolor `--purple`, 8 px odstępu od nagłówka). Opis pod nim i przycisk bez zmian. Weryfikacja: `node scripts/check.js`, podgląd lokalny na desktopie i telefonie.
 - **2026-10-12 (grafika hero LP ucznia nieucięta na telefonie)**
   - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
   - **WHY:** na ekranach do 980 px grafika hero w `index.html` była przycinana od dołu (`object-fit: cover` w pudełku o wysokości 260 px), więc zdjęcia mentorów i ikony technologii były ucięte.
