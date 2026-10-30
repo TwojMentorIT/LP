@@ -144,6 +144,10 @@ Zasada: **każda** zmiana w repozytorium dodaje wpis na górze tej listy, w tym 
 
 Wpisy:
 
+- **2026-10-30 (karuzela technologii z wyszukiwarki na LP ucznia)**
+  - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
+  - **WHY:** pasek ogólnych kategorii na LP nigdzie nie prowadził i różnił się od aplikacji. Odwiedzający ma widzieć tę samą karuzelę technologii co w wyszukiwarce i jednym kliknięciem trafiać do mentorów danej technologii.
+  - **WHAT:** w `index.html` animowany pasek pigułek zastąpiono karuzelą kafelków, którą `assets/js/main.js` renderuje z `SEARCH_CATALOG` (ta sama lista i kolejność co w aplikacji). Każdy kafelek to link do `https://app.twojmentor.it/mentors/search?skills=<nazwa>`, technologia bez ikony pokazuje inicjał. Strzałki przewijają o 300 px od 768 px szerokości, poniżej pasek się przesuwa palcem. Bez JavaScriptu pasek jest ukryty. Style w `assets/css/style.css` (`.tech-strip*`) odwzorowują komponent `TechStack`; usunięto animację `marquee`, a `.tech-chip` zostaje dla `404.html`. Weryfikacja: `node scripts/check.js`, podgląd lokalny na desktopie i telefonie.
 - **2026-10-30 (wyszukiwarka w hero LP ucznia)**
   - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
   - **WHY:** odwiedzający ma od razu szukać mentora według technologii, jak w aplikacji, zamiast trafiać na logowanie. Wyniki wyszukiwania w aplikacji są publiczne.

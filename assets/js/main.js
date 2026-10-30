@@ -284,6 +284,40 @@
   const SEARCH_RESULTS_URL = APP_ORIGIN + "/mentors/search";
   const CHECK_ICON = '<svg class="search-item-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
 
+  /* ---- Technology strip: a vanilla copy of the app's TechStack, each tile opens the app's results for one skill ---- */
+  const techStripWrap = document.getElementById("techStripWrap");
+  if (techStripWrap) {
+    const viewport = document.getElementById("techStripViewport");
+    document.getElementById("techStrip").replaceChildren(...SEARCH_CATALOG.flatMap((group) => group.techs).map(([name, title, hasIcon]) => {
+      const tile = el("span", "tech-strip-tile");
+      if (hasIcon) {
+        const icon = el("img");
+        icon.src = "/assets/img/tech/" + encodeURIComponent(name) + ".svg";
+        icon.alt = "";
+        icon.width = 32;
+        icon.height = 32;
+        icon.loading = "lazy";
+        tile.appendChild(icon);
+      } else {
+        // Technologies without an icon yet show their initial so the tile is not empty, as in the app.
+        const initial = el("span", "tech-strip-initial", title.charAt(0));
+        initial.setAttribute("aria-hidden", "true");
+        tile.appendChild(initial);
+      }
+      const link = el("a", "tech-strip-link");
+      // URLSearchParams keeps "c#" and "c++" intact in the query.
+      link.href = SEARCH_RESULTS_URL + "?" + new URLSearchParams({ skills: name }).toString();
+      link.append(tile, el("span", "tech-strip-name", title));
+      const item = el("li", "tech-strip-item");
+      item.appendChild(link);
+      return item;
+    }));
+    const scrollStrip = (amount) => viewport.scrollBy({ left: amount, behavior: "smooth" });
+    document.getElementById("techStripPrev").addEventListener("click", () => scrollStrip(-300));
+    document.getElementById("techStripNext").addEventListener("click", () => scrollStrip(300));
+    techStripWrap.hidden = false;
+  }
+
   const heroSearch = document.getElementById("heroSearch");
   const searchModal = document.getElementById("searchModal");
   if (heroSearch && searchModal && typeof searchModal.showModal === "function") {
