@@ -128,13 +128,37 @@ h1,h2,h3{line-height:1.15;letter-spacing:-.02em;font-weight:800}
 .hero-photo{width:100%;border-radius:22px;}
 
 /* ===== Tech strip ===== */
-.tech-strip-wrap{
-  position:relative;width:100%;margin:0 auto;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
-  mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+/* Mirrors the app's TechStack (src/components/app/search/tech-stack/). */
+.tech-strip-wrap{position:relative;width:100%;--strip-fade:32px;--strip-btn-inset:32px}
+.tech-strip-wrap[hidden]{display:none}
+.tech-strip-viewport{
+  overflow-x:auto;scrollbar-width:none;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 var(--strip-fade),#000 calc(100% - var(--strip-fade)),transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 var(--strip-fade),#000 calc(100% - var(--strip-fade)),transparent);
 }
-.tech-strip{display:flex;gap:10px;padding:18px 0;width:max-content;animation:marquee 32s linear infinite}
-@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.tech-strip-viewport::-webkit-scrollbar{display:none}
+.tech-strip{display:flex;gap:8px;padding:16px 16px 0;width:max-content;list-style:none;margin:0}
+.tech-strip-item{flex:none;width:80px}
+.tech-strip-link{display:flex;flex-direction:column;gap:8px;color:#101317;text-decoration:none}
+.tech-strip-tile{
+  display:flex;align-items:center;justify-content:center;width:80px;height:80px;
+  background:#fff;border:1px solid #d0d4db;border-radius:12px;box-shadow:var(--shadow-sm);transition:border-color .2s;
+}
+.tech-strip-link:hover .tech-strip-tile{border-color:#7337ff}
+.tech-strip-tile img{width:32px;height:32px}
+.tech-strip-initial{font-size:24px;font-weight:600;color:#7337ff}
+.tech-strip-name{font-size:12px;line-height:16px;font-weight:500;text-align:center}
+.tech-strip-btn{
+  position:absolute;top:56px;z-index:1;display:none;align-items:center;justify-content:center;width:32px;height:40px;
+  transform:translateY(-50%);background:#7337ff;color:#fff;border-radius:4px;transition:background .2s;
+}
+.tech-strip-btn:hover{background:#5f25e6}
+.tech-strip-prev{left:var(--strip-btn-inset)}
+.tech-strip-next{right:var(--strip-btn-inset)}
+/* Touch devices swipe the strip, so the arrows would only cover it on mobile. */
+@media (min-width:768px){.tech-strip{padding-bottom:16px}.tech-strip-btn{display:flex}}
+@media (min-width:1280px){.tech-strip-wrap{--strip-fade:64px}}
+@media (min-width:1536px){.tech-strip-wrap{--strip-fade:128px;--strip-btn-inset:calc((100% - 1400px)/2 + 32px)}}
 .tech-chip{
   flex:none;font-size:13px;font-weight:600;color:var(--slate);
   background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;
