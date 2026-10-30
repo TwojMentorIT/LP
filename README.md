@@ -40,7 +40,7 @@ Technologia: statyczny HTML, jeden plik CSS, jeden plik JS (vanilla, bez zależn
   CNAME                         domena własna (twojmentor.it), NIE usuwaj
   .nojekyll                     wyłącza Jekyll na GitHub Pages, NIE usuwaj
   assets/css/style.css          wspólne style
-  assets/js/main.js             menu mobilne, animacje reveal, karuzela mentorów (dane z API aplikacji), modal zapisu, akordeon FAQ
+  assets/js/main.js             menu mobilne, animacje reveal, karuzela mentorów (dane z API aplikacji), wyszukiwarka w hero (kopia listy technologii z aplikacji, aktualizowana ręcznie), modal zapisu, akordeon FAQ
   assets/img/                   grafiki (webp/png/svg), og-image.jpg
   assets/img/tech/              ikony technologii skopiowane z aplikacji (pigułki w kartach mentorów)
   scripts/serve.js              lokalny podgląd emulujący routing GitHub Pages
@@ -144,6 +144,10 @@ Zasada: **każda** zmiana w repozytorium dodaje wpis na górze tej listy, w tym 
 
 Wpisy:
 
+- **2026-10-30 (wyszukiwarka w hero LP ucznia)**
+  - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
+  - **WHY:** odwiedzający ma od razu szukać mentora według technologii, jak w aplikacji, zamiast trafiać na logowanie. Wyniki wyszukiwania w aplikacji są publiczne.
+  - **WHAT:** w `index.html` przycisk "Zaloguj się" w hero zastąpiono polem "Wybierz czego chcesz się nauczyć", które otwiera okno `<dialog>` wyboru technologii, kategorii lub słowa kluczowego. "Wyszukaj" przenosi na `https://app.twojmentor.it/mentors/search` z parametrami `skills`, `category`, `keyword`, tymi samymi co w aplikacji. Bez JavaScriptu pole jest zwykłym linkiem do tej strony. `assets/js/main.js` zawiera kopię listy technologii z `src/utils/constants/technologies.ts` aplikacji: zmiana listy w aplikacji wymaga ręcznej aktualizacji `SEARCH_CATALOG`. Style w `assets/css/style.css` (`.hero-search`, `.search-*`) odwzorowują komponent `SearchAutoComplete`. W `sitemap.xml` zaktualizowano `lastmod` strony głównej. Przycisk "Zaloguj się" w nagłówku bez zmian. Weryfikacja: `node scripts/check.js`, podgląd lokalny na desktopie i telefonie.
 - **2026-10-28 (dopisek "wersja Alfa aplikacji" w hero LP ucznia)**
   - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
   - **WHY:** odwiedzający ma od razu wiedzieć, że aplikacja jest we wczesnej wersji Alfa.
