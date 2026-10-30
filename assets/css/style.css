@@ -85,6 +85,44 @@ h1,h2,h3{line-height:1.15;letter-spacing:-.02em;font-weight:800}
 .hero-version{margin-top:8px;font-size:16px;font-weight:600;color:var(--purple)}
 .hero-sub{margin:20px 0 28px;font-size:18px;color:var(--slate);max-width:30ch}
 
+/* Hero search: the look of the app's SearchAutoComplete, hence its Poppins font and its own colors */
+.hero-search,.search-modal{--s-primary:#7337ff;--s-primary-hover:#6832e6;--s-primary-light:#f1ebff;--s-heading:#101317;--s-paragraph:#52575f;--s-border:#d0d4db;--s-muted:#808893;--s-disabled:#a4aab2;--s-bg:#f6f8f9;font-family:"Poppins",var(--font)}
+.hero-search{display:flex;align-items:center;gap:8px;width:100%;min-height:68px;padding:8px 24px;background:#fff;border:1px solid var(--s-border);border-radius:12px;box-shadow:0 2px 10px 0 #e4f3f8;font-size:14px;color:var(--s-muted);cursor:pointer;transition:background .2s,border-color .2s}
+.hero-search svg{flex:none;color:var(--s-paragraph)}
+.hero-search:hover{border-color:var(--s-primary);background:var(--s-primary-light)}
+.search-modal{position:fixed;inset:0;margin:auto;width:min(640px,calc(100% - 32px));max-height:85vh;padding:0;border:0;border-radius:12px;background:#fff;color:var(--s-heading);box-shadow:var(--shadow-lg);overflow:hidden}
+.search-modal[open]{display:flex;flex-direction:column}
+.search-modal::backdrop{background:rgba(23,19,38,.6);backdrop-filter:blur(4px)}
+.search-modal-title{flex:none;padding:24px 56px 16px 24px;font-size:20px;font-weight:600;line-height:1.4;letter-spacing:0}
+.search-field{flex:none;display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin:0 24px;padding:8px 16px;min-height:52px;background:var(--s-bg);border:1px solid var(--s-border);border-radius:8px;transition:border-color .2s}
+.search-field:hover,.search-field:focus-within{border-color:var(--s-primary)}
+.search-field input{flex:1;min-width:120px;border:0;outline:0;background:transparent;font:inherit;font-size:14px;color:var(--s-heading)}
+.search-field input::placeholder{color:var(--s-muted)}
+.search-chips{display:contents;list-style:none}
+.search-chip{display:inline-flex;align-items:center;gap:4px;padding:4px 8px;border-radius:6px;background:var(--s-primary-light);color:var(--s-primary);font-size:14px}
+.search-chip button{display:flex;font-size:16px;line-height:1;color:inherit}
+.search-list{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:24px}
+.search-group[hidden]{display:none}
+.search-group:not([hidden]) ~ .search-group:not([hidden]){margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}
+.search-group-title{padding:16px;font-size:16px;font-weight:600;line-height:1.5;letter-spacing:0;text-transform:uppercase}
+.search-item{display:flex;align-items:center;gap:8px;width:100%;margin-bottom:4px;padding:14px 16px;border-radius:8px;font-size:14px;font-weight:500;color:var(--s-heading);text-align:left;transition:background .2s,color .2s}
+.search-item[hidden]{display:none}
+.search-item img{flex:none;width:20px;height:20px}
+.search-item:hover,.search-item:focus-visible{background:var(--s-primary);color:#fff}
+.search-item.is-selected{background:var(--s-primary-light);color:var(--s-primary)}
+.search-item.is-selected:hover,.search-item.is-selected:focus-visible{background:var(--s-primary);color:#fff}
+.search-item:disabled{background:#fff;color:var(--s-disabled);cursor:default}
+.search-item-check{display:none;margin-left:auto}
+.search-item.is-selected .search-item-check,.search-item:disabled .search-item-check{display:block}
+.search-empty{display:flex;flex-direction:column;gap:8px;text-align:center}
+.search-empty[hidden]{display:none}
+.search-footer{flex:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:24px;border-top:1px solid var(--line)}
+.search-btn{min-height:48px;padding:0 16px;border-radius:8px;background:var(--s-primary);color:#fff;font-size:14px;font-weight:500;transition:background .2s}
+.search-btn:hover{background:var(--s-primary-hover)}
+.search-btn:disabled{background:var(--line);color:var(--s-disabled);cursor:not-allowed}
+.search-btn-secondary{background:#fff;color:var(--s-primary);border:1px solid var(--s-primary)}
+.search-btn-secondary:hover{background:var(--s-primary-light)}
+
 .hero-visual{position:relative;display:flex;justify-content:center}
 .hero-photo-wrap{position:relative;width:100%;max-width:560px}
 .hero-photo{width:100%;border-radius:22px;}

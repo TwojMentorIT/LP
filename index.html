@@ -116,8 +116,24 @@
           <h1 class="hero-title">Znajdź swojego<br>Mentora w IT</h1>
           <p class="hero-version">(wersja Alfa aplikacji)</p>
           <p class="hero-sub">Wybieraj spośród dziesiątek mentorów i rozpocznij swoją przygodę z IT już dziś!</p>
-          <a href="https://app.twojmentor.it/login" class="btn btn-primary">Zaloguj się</a>
+          <a href="https://app.twojmentor.it/mentors/search" class="hero-search" id="heroSearch" aria-haspopup="dialog">
+            <svg width="17" height="16" viewBox="0 0 17 16" fill="none" aria-hidden="true"><path d="M8.17 14a6.33 6.33 0 1 0 0-12.67 6.33 6.33 0 0 0 0 12.67ZM15.17 14.67l-1.34-1.34" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Wybierz czego chcesz się nauczyć</span>
+          </a>
 
+          <dialog class="search-modal" id="searchModal" aria-labelledby="searchModalTitle">
+            <button type="button" class="modal-close" id="searchModalClose" aria-label="Zamknij">&times;</button>
+            <h2 class="search-modal-title" id="searchModalTitle">Wybierz czego chcesz się nauczyć</h2>
+            <div class="search-field">
+              <ul class="search-chips" id="searchChips"></ul>
+              <input type="text" id="searchInput" autocomplete="off" aria-label="Wybierz obszar w którym chcesz się doskonalić" placeholder="Wybierz obszar w którym chcesz się doskonalić" />
+            </div>
+            <div class="search-list" id="searchList"></div>
+            <div class="search-footer">
+              <button type="button" class="search-btn search-btn-secondary" id="searchClear">Wyczyść</button>
+              <button type="button" class="search-btn" id="searchSubmit" disabled>Wyszukaj</button>
+            </div>
+          </dialog>
         </div>
 
         <div class="hero-visual" aria-hidden="false">
