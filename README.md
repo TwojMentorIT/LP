@@ -144,6 +144,11 @@ Zasada: **każda** zmiana w repozytorium dodaje wpis na górze tej listy, w tym 
 
 Wpisy:
 
+- **2026-11-08 (nagłówek na telefonie: "Profil" zamiast hamburgera)**
+  - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
+  - **WHY:** w aplikacji pasek gościa na telefonie nie ma już hamburgera (PR it-mentor #348 i #349), a nagłówek LP ma wyglądać tak samo.
+  - **WHAT:** we wszystkich 7 stronach (`index.html`, `zostan-mentorem.html`, `faq.html`, `regulamin.html`, `polityka-prywatnosci.html`, `mapa-strony.html`, `404.html`) przycisk z trzema kreskami zastąpiono przyciskiem "Profil" (`.btn.btn-primary.nav-toggle`, na LP mentora niebieski jak pozostałe przyciski). Do 680 px szerokości pasek pokazuje tylko logo (32 px zamiast 44) i "Profil"; kliknięcie otwiera szufladę z oboma przyciskami na całą szerokość, już bez cienia, a "Profil" zamienia się w okrągły X ("Zamknij menu") tej samej wysokości, który ją zamyka. Od 681 px nagłówek bez zmian. W regulaminie i polityce prywatności zmienił się tylko nagłówek, treść dokumentów bez zmian. Bez JavaScriptu na telefonie przyciski z nagłówka są niedostępne (szuflady nie da się otworzyć). Pliki: strony HTML, `assets/css/style.css` (`.nav-toggle*`, reguły do 680 px), `assets/js/main.js` (etykieta "Zamknij menu"). Weryfikacja: `node scripts/check.js` (OK), podgląd lokalny na telefonie (375 px) i desktopie (1280 px), LP ucznia i mentora.
+
 - **2026-10-30 (karuzela technologii z wyszukiwarki na LP ucznia)**
   - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
   - **WHY:** pasek ogólnych kategorii na LP nigdzie nie prowadził i różnił się od aplikacji. Odwiedzający ma widzieć tę samą karuzelę technologii co w wyszukiwarce i jednym kliknięciem trafiać do mentorów danej technologii.

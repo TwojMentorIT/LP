@@ -31,11 +31,12 @@
       <a href="/" class="logo" aria-label="TwójMentor.IT - strona główna">
         <img src="/assets/img/logo.webp" width="218" height="53" alt="TwójMentor.IT" class="logo-img" />
       </a>
-      <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+      <button type="button" class="btn btn-primary nav-toggle" id="navToggle" aria-expanded="false" aria-controls="headerActions">
+        <span class="nav-toggle-label">Profil</span>
+        <svg class="nav-toggle-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
       </button>
 
-      <div class="header-actions">
+      <div class="header-actions" id="headerActions">
         <a href="/zostan-mentorem" class="btn btn-ghost">Chcę zostać mentorem</a>
         <a href="https://app.twojmentor.it/login" class="btn btn-primary">Zaloguj się</a>
       </div>
