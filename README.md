@@ -18,6 +18,7 @@ Ten plik jest dokumentacją dla ludzi i agentów AI. Przeczytaj sekcję 1 przed 
 10. **Dokumenty prawne** (regulamin, polityka prywatności) zmieniaj tylko na wyraźne polecenie i według treści źródłowej dostarczonej przez właściciela. Nie poprawiaj ich z własnej inicjatywy; niespójności zgłaszaj (sekcja 9).
 11. **Całe repozytorium jest publiczne.** GitHub Pages serwuje każdy plik z katalogu głównego (także ten README). Nie wpisuj sekretów, kluczy ani wewnętrznych linków (np. do dokumentów Google).
 12. **Nie dodawaj** bibliotek, bundlerów, frameworków ani kroku budowania bez zgody właściciela. To celowo czysty HTML, CSS i JS.
+13. **Wersja CSS i JS w linkach.** Każda strona linkuje `/assets/css/style.css?v=<hash>` i `/assets/js/main.js?v=<hash>`, gdzie hash to pierwsze 8 znaków SHA-256 treści pliku (z końcami linii LF). Dzięki temu po wdrożeniu przeglądarka nie łączy nowego HTML ze starym plikiem z pamięci (GitHub Pages pozwala trzymać pliki 10 minut). Po każdej zmianie `style.css` lub `main.js` uruchom `node scripts/check.js --fix`, który wpisze nowe wersje na wszystkich stronach; `node scripts/check.js` bez `--fix` zgłasza błąd, gdy wersja jest nieaktualna.
 
 ## 2. Opis repozytorium
 
@@ -143,6 +144,11 @@ Zasada: **każda** zmiana w repozytorium dodaje wpis na górze tej listy, w tym 
   - **WHAT:** co dokładnie zmieniono (pliki, zachowanie, skutki, sposób weryfikacji).
 
 Wpisy:
+
+- **2026-11-08 (wersja w linkach do CSS i JS)**
+  - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
+  - **WHY:** po wdrożeniu nowego nagłówka przeglądarka pokazała nowy HTML ze starym `style.css` z pamięci (GitHub Pages: `Cache-Control: max-age=600`), więc na telefonie nagłówek był rozsypany do czasu twardego odświeżenia.
+  - **WHAT:** wszystkie 7 stron linkuje `style.css` i `main.js` z parametrem `?v=<hash>` (pierwsze 8 znaków SHA-256 treści pliku, końce linii znormalizowane do LF, więc hash z Windowsa zgadza się z plikiem serwowanym). `scripts/check.js` ma nowy punkt 6: sprawdza, że każda strona ma aktualną wersję obu plików, a z `--fix` sam ją wpisuje. Nowa zasada 13 w sekcji 1. Treść stron bez zmian, także regulaminu i polityki prywatności (zmienił się tylko adres pliku CSS i JS). Weryfikacja: `node scripts/check.js` zgłasza błąd na starych linkach, po `--fix` zwraca OK; hash zgadza się z plikiem na produkcji; podgląd lokalny ładuje oba pliki z `?v=`.
 
 - **2026-11-08 (nagłówek na telefonie: "Profil" zamiast hamburgera)**
   - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
