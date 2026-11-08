@@ -16,6 +16,8 @@
     navToggle.addEventListener("click", () => {
       const open = actions.classList.toggle("open");
       navToggle.setAttribute("aria-expanded", String(open));
+      if (open) navToggle.setAttribute("aria-label", "Zamknij menu");
+      else navToggle.removeAttribute("aria-label");
     });
   }
 

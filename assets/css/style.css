@@ -73,8 +73,8 @@ h1,h2,h3{line-height:1.15;letter-spacing:-.02em;font-weight:800}
 .logo-img{height:44px;width:auto;display:block}
 .logo-footer .logo-img{height:42px}
 .header-actions{display:flex;align-items:center;gap:12px}
-.nav-toggle{display:none;flex-direction:column;gap:5px;padding:8px}
-.nav-toggle span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:.3s var(--ease)}
+.nav-toggle{display:none;line-height:1.6}
+.nav-toggle-close{display:none}
 
 /* ===== Hero ===== */
 .hero{position:relative;padding:48px 0 0;background:
@@ -337,10 +337,14 @@ h1,h2,h3{line-height:1.15;letter-spacing:-.02em;font-weight:800}
   .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
 }
 @media (max-width:680px){
-  .header-actions .btn-ghost{display:none}
-  .nav-toggle{display:flex}
-  .header-actions.open{position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:18px 24px;gap:12px;box-shadow:var(--shadow);border-top:1px solid var(--line)}
-  .header-actions.open .btn-ghost{display:inline-flex}
+  .site-header .logo-img{height:32px}
+  /* No hamburger on a phone: "Profil" opens the drawer with both actions and turns into its X. */
+  .header-actions{display:none}
+  .nav-toggle{display:inline-flex}
+  .nav-toggle[aria-expanded="true"]{width:46.4px;height:46.4px;padding:0}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-label{display:none}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-close{display:block}
+  .header-actions.open{display:flex;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:18px 24px;gap:12px;border-top:1px solid var(--line)}
   .header-actions.open .btn{width:100%}
   .footer-grid{grid-template-columns:1fr 1fr}
   .footer-brand{grid-column:1/-1}
