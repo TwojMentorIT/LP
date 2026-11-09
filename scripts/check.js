@@ -1,6 +1,7 @@
-// Repository rules linter. Usage: node scripts/check.js   (exit code 1 on any violation)
+// Repository rules linter. Usage: node scripts/check.js [--fix]   (exit code 1 on any violation; --fix rewrites asset versions)
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
 
 const ROOT = path.resolve(__dirname, "..");
 const SITE = "https://twojmentor.it";
@@ -79,6 +80,25 @@ if (!exists("llms.txt")) fail("llms.txt", "missing");
 if (!exists("404.html")) fail("404.html", "missing (needed for /path/ -> /path redirect)");
 for (const d of fs.readdirSync(ROOT, { withFileTypes: true })) {
   if (d.isDirectory() && exists(path.posix.join(d.name, "index.html"))) fail(d.name, "directory with index.html forces a trailing slash on GitHub Pages; use " + d.name + ".html");
+}
+
+// 6. Shared CSS/JS are linked with ?v=<content hash>, so a deploy never pairs new HTML with a cached old file.
+// Line endings are normalised so a Windows checkout and the served LF file give the same hash.
+const FIX = process.argv.includes("--fix");
+const ASSETS = ["/assets/css/style.css", "/assets/js/main.js"];
+const version = (a) => crypto.createHash("sha256").update(read(a.slice(1)).replace(/\r\n/g, "\n")).digest("hex").slice(0, 8);
+for (const f of pages) {
+  let t = read(f);
+  for (const a of ASSETS) {
+    const want = `${a}?v=${version(a)}`;
+    const re = new RegExp(`"${a.replace(/[.]/g, "\\.")}(\\?v=[0-9a-f]*)?"`, "g");
+    const found = [...t.matchAll(re)].map((m) => m[0].slice(1, -1));
+    if (!found.length) { fail(f, `does not link ${a}`); continue; }
+    if (found.every((v) => v === want)) continue;
+    if (FIX) t = t.replace(re, `"${want}"`);
+    else fail(f, `link ${want} (found ${found.join(", ")}); run node scripts/check.js --fix`);
+  }
+  if (FIX) fs.writeFileSync(path.join(ROOT, f), t);
 }
 
 if (errors.length) { console.error(errors.map((e) => "FAIL " + e).join("\n")); process.exit(1); }
