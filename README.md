@@ -41,7 +41,7 @@ Technologia: statyczny HTML, jeden plik CSS, jeden plik JS (vanilla, bez zależn
   .nojekyll                     wyłącza Jekyll na GitHub Pages, NIE usuwaj
   assets/css/style.css          wspólne style
   assets/js/main.js             menu mobilne, animacje reveal, karuzela mentorów (dane z API aplikacji), wyszukiwarka w hero (kopia listy technologii z aplikacji, aktualizowana ręcznie), modal zapisu, akordeon FAQ
-  assets/img/                   grafiki (webp/png/svg), og-image.jpg
+  assets/img/                   grafiki (webp/png/svg), og-znajdz-mentora.jpg (podgląd linków), og-image.jpg (stara grafika OG, nieużywana)
   assets/img/tech/              ikony technologii skopiowane z aplikacji (pigułki w kartach mentorów)
   scripts/serve.js              lokalny podgląd emulujący routing GitHub Pages
   scripts/check.js              walidator zasad z tego pliku
@@ -108,7 +108,7 @@ Tekst wklejany z Google Docs, edytorów lub od modeli AI trzeba znormalizować d
 Zasady SEO:
 - jedna strona = jeden temat, jeden `<h1>`, logiczna hierarchia `h2`/`h3`,
 - unikalny `<title>` i `meta description` (bez upychania słów kluczowych), naturalny język polski,
-- canonical na `https://twojmentor.it/...`, dane Open Graph i Twitter na stronie głównej (`og:image` = `/assets/img/og-image.jpg`),
+- canonical na `https://twojmentor.it/...`, dane Open Graph i Twitter na stronie głównej i na `/zostan-mentorem` (`og:image` = `/assets/img/og-znajdz-mentora.jpg`, 1200x630; po zmianie grafiki nadaj nową nazwę pliku i odśwież podgląd w Facebook Sharing Debugger),
 - każdy obraz z sensownym `alt` (opis treści, nie słowa kluczowe), wymiary `width`/`height`,
 - dane strukturalne JSON-LD (Organization, FAQPage) na stronie głównej; muszą być poprawnym JSON (walidator to sprawdza) i zgodne z widoczną treścią,
 - linkowanie wewnętrzne przez opisowe teksty linków,
@@ -143,6 +143,11 @@ Zasada: **każda** zmiana w repozytorium dodaje wpis na górze tej listy, w tym 
   - **WHAT:** co dokładnie zmieniono (pliki, zachowanie, skutki, sposób weryfikacji).
 
 Wpisy:
+
+- **2026-11-11 (grafika podglądu linków i Open Graph na LP mentora)**
+  - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
+  - **WHY:** link `/zostan-mentorem` w postach na Facebooku nie miał podglądu (brak tagów Open Graph), a strona główna miała mieć nową grafikę podglądu.
+  - **WHAT:** dodano `assets/img/og-znajdz-mentora.jpg` (1200x630, grafika od Bartka "Znajdź swojego Mentora w IT"). W `index.html` `og:image` i `twitter:image` wskazują na nową grafikę, dodano `og:image:alt`. W `zostan-mentorem.html` dodano pełny zestaw tagów Open Graph i Twitter (tytuł i opis dla mentorów, ta sama grafika). Stary `og-image.jpg` zostaje w repozytorium, ale nie jest używany. W `sitemap.xml` zaktualizowano `lastmod` obu stron. Po wdrożeniu trzeba odświeżyć podgląd w Facebook Sharing Debugger ("Scrape Again"). Weryfikacja: `node scripts/check.js`, `curl` produkcji.
 
 - **2026-11-08 (nagłówek na telefonie: "Profil" zamiast hamburgera)**
   - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
