@@ -14,6 +14,7 @@ Język serwisu: polski. Adres: https://twojmentor.it. Kontakt: devs@twojmentor.i
 
 - [Regulamin](https://twojmentor.it/regulamin): zasady korzystania z serwisu, rezerwacji sesji, opinii i reklamacji.
 - [Polityka prywatności](https://twojmentor.it/polityka-prywatnosci): zasady przetwarzania danych osobowych.
+- [Licencje i znaki towarowe](https://twojmentor.it/licencje): znaki towarowe i licencje logotypów technologii pokazywanych w serwisie.
 
 ## Dla wyszukiwarek
 

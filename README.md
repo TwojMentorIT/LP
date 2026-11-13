@@ -31,6 +31,7 @@ Technologia: statyczny HTML, jeden plik CSS, jeden plik JS (vanilla, bez zależn
   zostan-mentorem.html          oferta dla mentorów (/zostan-mentorem)
   faq.html                      pytania i odpowiedzi (/faq)
   regulamin.html                regulamin serwisu (/regulamin)
+  licencje.html                 znaki towarowe i licencje ikon (/licencje)
   polityka-prywatnosci.html     polityka prywatności (/polityka-prywatnosci)
   mapa-strony.html              mapa strony w HTML (/mapa-strony)
   404.html                      strona błędu + przekierowanie /x/ na /x
@@ -48,7 +49,7 @@ Technologia: statyczny HTML, jeden plik CSS, jeden plik JS (vanilla, bez zależn
   README.md, CLAUDE.md, AGENTS.md   dokumentacja i wskazówki dla agentów
 ```
 
-Elementy wspólne (nagłówek, stopka, modal zapisu MailerLite) są skopiowane do każdej strony HTML. Zmiana w jednym z nich wymaga zmiany we wszystkich stronach (`index.html`, `zostan-mentorem.html`, `faq.html`, `regulamin.html`, `polityka-prywatnosci.html`, `mapa-strony.html`, `404.html`).
+Elementy wspólne (nagłówek, stopka, modal zapisu MailerLite) są skopiowane do każdej strony HTML. Zmiana w jednym z nich wymaga zmiany we wszystkich stronach (`index.html`, `zostan-mentorem.html`, `faq.html`, `regulamin.html`, `polityka-prywatnosci.html`, `licencje.html`, `mapa-strony.html`, `404.html`).
 
 `404.html` ma pełny układ LP (nagłówek, stopka, modal, styl hero z gradientem i przyciski z `style.css`), a dodatkowo: skrypt przekierowujący `/x/` na `/x` na samym początku `<head>`, `<meta name="robots" content="noindex">` i brak canonical. Strona jest serwowana pod dowolnym nieistniejącym adresem, dlatego używa wyłącznie linków root-absolute.
 
@@ -144,6 +145,11 @@ Zasada: **każda** zmiana w repozytorium dodaje wpis na górze tej listy, w tym 
 
 Wpisy:
 
+- **2026-11-13 (podstrona /licencje: znaki towarowe i licencje ikon)**
+  - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
+  - **WHY:** część ikon technologii w aplikacji (z projektu Simple Icons: Jenkins na CC BY-SA 3.0, cztery projekty Apache na Apache License 2.0, GNU Bash na MIT) wymaga podania autora i licencji, a ani aplikacja, ani LP tego nie pokazywały. Strona mówi też, że loga technologii są znakami towarowymi ich właścicieli. Regulaminu i polityki prywatności nie zmieniano.
+  - **WHAT:** nowa strona `licencje.html` (`/licencje`, układ `regulamin.html`): znaki towarowe, lista ikon z autorem, licencją i źródłem, pełny tekst licencji MIT logo Bash (zgodny z plikiem LICENSE repozytorium official-bash-logo) i adres kontaktowy. Link "Licencje i znaki towarowe" dodano w stopce wszystkich 8 stron (kolumna "Regulaminy"), wpis w `mapa-strony.html`, `sitemap.xml` (także `lastmod` mapy strony) i `llms.txt`. Weryfikacja: `node scripts/check.js`, podgląd lokalny.
+
 - **2026-11-11 (grafika podglądu linków i Open Graph na LP mentora)**
   - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
   - **WHY:** link `/zostan-mentorem` w postach na Facebooku nie miał podglądu (brak tagów Open Graph), a strona główna miała mieć nową grafikę podglądu.
@@ -152,7 +158,7 @@ Wpisy:
 - **2026-11-08 (nagłówek na telefonie: "Profil" zamiast hamburgera)**
   - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
   - **WHY:** w aplikacji pasek gościa na telefonie nie ma już hamburgera (PR it-mentor #348 i #349), a nagłówek LP ma wyglądać tak samo.
-  - **WHAT:** we wszystkich 7 stronach (`index.html`, `zostan-mentorem.html`, `faq.html`, `regulamin.html`, `polityka-prywatnosci.html`, `mapa-strony.html`, `404.html`) przycisk z trzema kreskami zastąpiono przyciskiem "Profil" (`.btn.btn-primary.nav-toggle`, na LP mentora niebieski jak pozostałe przyciski). Do 680 px szerokości pasek pokazuje tylko logo (32 px zamiast 44) i "Profil"; kliknięcie otwiera szufladę z oboma przyciskami na całą szerokość, już bez cienia, a "Profil" zamienia się w okrągły X ("Zamknij menu") tej samej wysokości, który ją zamyka. Od 681 px nagłówek bez zmian. W regulaminie i polityce prywatności zmienił się tylko nagłówek, treść dokumentów bez zmian. Bez JavaScriptu na telefonie przyciski z nagłówka są niedostępne (szuflady nie da się otworzyć). Pliki: strony HTML, `assets/css/style.css` (`.nav-toggle*`, reguły do 680 px), `assets/js/main.js` (etykieta "Zamknij menu"). Weryfikacja: `node scripts/check.js` (OK), podgląd lokalny na telefonie (375 px) i desktopie (1280 px), LP ucznia i mentora.
+  - **WHAT:** we wszystkich 7 stronach (`index.html`, `zostan-mentorem.html`, `faq.html`, `regulamin.html`, `polityka-prywatnosci.html`, `licencje.html`, `mapa-strony.html`, `404.html`) przycisk z trzema kreskami zastąpiono przyciskiem "Profil" (`.btn.btn-primary.nav-toggle`, na LP mentora niebieski jak pozostałe przyciski). Do 680 px szerokości pasek pokazuje tylko logo (32 px zamiast 44) i "Profil"; kliknięcie otwiera szufladę z oboma przyciskami na całą szerokość, już bez cienia, a "Profil" zamienia się w okrągły X ("Zamknij menu") tej samej wysokości, który ją zamyka. Od 681 px nagłówek bez zmian. W regulaminie i polityce prywatności zmienił się tylko nagłówek, treść dokumentów bez zmian. Bez JavaScriptu na telefonie przyciski z nagłówka są niedostępne (szuflady nie da się otworzyć). Pliki: strony HTML, `assets/css/style.css` (`.nav-toggle*`, reguły do 680 px), `assets/js/main.js` (etykieta "Zamknij menu"). Weryfikacja: `node scripts/check.js` (OK), podgląd lokalny na telefonie (375 px) i desktopie (1280 px), LP ucznia i mentora.
 
 - **2026-10-30 (karuzela technologii z wyszukiwarki na LP ucznia)**
   - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
