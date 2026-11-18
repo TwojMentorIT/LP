@@ -145,6 +145,11 @@ Zasada: **każda** zmiana w repozytorium dodaje wpis na górze tej listy, w tym 
 
 Wpisy:
 
+- **2026-11-18 (polityka prywatności: kalendarz Serwisu i retencja wydarzeń)**
+  - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Marka.
+  - **WHY:** aplikacja (PR it-mentor #304 i #410) tworzy wydarzenie i spotkanie Google Meet w kalendarzu Serwisu, gdy Mentor nie połączył Kalendarza Google. Takie wydarzenie zawiera adresy e-mail Studenta i Mentora, a Google wysyła z niego zaproszenia. Polityka tego nie opisywała i nie podawała okresu przechowywania. Uwaga z review Tomasza do PR it-mentor #304.
+  - **WHAT:** `polityka-prywatnosci.html` w wersji 1.2.0 (data wejścia w życie i aktualizacji 18.11.2026): w §2 nowa kategoria "Wydarzenia Sesji w kalendarzu Serwisu"; w §4 wiersz Google obejmuje kalendarz Serwisu w Google Workspace; w §5 ust. 3 odesłanie do nowego ust. 9, który opisuje kiedy wydarzenie powstaje w kalendarzu Serwisu, jakie dane zawiera, zaproszenia i odwołania wysyłane przez Google, ustawienia prywatności wydarzenia (ukryta lista gości, brak zapraszania i edycji), aktualizację adresu po jego zmianie i po usunięciu Konta, usuwanie wydarzeń 30 dni po Sesji i podstawę prawną; dotychczasowe ust. 9 i 10 (Limited Use) to teraz ust. 10 i 11; w §8 nowy wiersz retencji (30 dni od zakończenia Sesji). Pozostała treść bez zmian. W `sitemap.xml` zaktualizowano `lastmod`. Weryfikacja: `node scripts/check.js`.
+
 - **2026-11-13 (podstrona /licencje: znaki towarowe i licencje ikon)**
   - **WHO:** Claude Code (Claude Opus 5.5) na polecenie Bartka.
   - **WHY:** część ikon technologii w aplikacji (z projektu Simple Icons: Jenkins na CC BY-SA 3.0, cztery projekty Apache na Apache License 2.0, GNU Bash na MIT) wymaga podania autora i licencji, a ani aplikacja, ani LP tego nie pokazywały. Strona mówi też, że loga technologii są znakami towarowymi ich właścicieli. Regulaminu i polityki prywatności nie zmieniano.

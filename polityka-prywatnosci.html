@@ -61,7 +61,7 @@
         <div class="legal-content">
           <h1 id="policy-title" class="section-title" style="margin-bottom:32px">Polityka Prywatności</h1>
 
-          <p><strong>Wersja:</strong> 1.1.1<br><strong>Data wejścia w życie:</strong> 06.10.2026<br><strong>Ostatnia aktualizacja:</strong> 06.10.2026</p>
+          <p><strong>Wersja:</strong> 1.2.0<br><strong>Data wejścia w życie:</strong> 18.11.2026<br><strong>Ostatnia aktualizacja:</strong> 18.11.2026</p>
 
           <h2>§1 Współadministratorzy</h2>
           <ol>
@@ -84,6 +84,7 @@
                 <tr><td>Dane profilu Studenta</td><td>biografia, cele nauki</td></tr>
                 <tr><td>Dane dotyczące Sesji</td><td>terminy, status, notatki, historia spotkań, informacje o zgłoszonych problemach/sporach</td></tr>
                 <tr><td>Dane z konta Google (dot. Mentorów, którzy połączyli Kalendarz Google)</td><td>adres e-mail konta Google, token dostępu i token odświeżania (przechowywane w formie zaszyfrowanej), identyfikatory wydarzeń utworzonych przez Serwis w Kalendarzu Google oraz linki do spotkań Google Meet. Szczegóły w §5</td></tr>
+                <tr><td>Wydarzenia Sesji w kalendarzu Serwisu (dot. Sesji z Mentorem, który nie połączył Kalendarza Google)</td><td>nazwa Sesji, termin rozpoczęcia i zakończenia, link do spotkania Google Meet oraz adresy e-mail Studenta i Mentora jako gości wydarzenia. Szczegóły w §5 ust. 9</td></tr>
                 <tr><td>Komunikacja</td><td>wiadomości wysłane w czacie wewnętrznym Serwisu, wraz z ewentualnymi załącznikami</td></tr>
                 <tr><td>Opinie</td><td>treść i ocena wystawiona Mentorowi</td></tr>
                 <tr><td>Zgłoszenia</td><td>treść zgłoszeń dotyczących Sesji, zgłoszeń błędów lub uwag</td></tr>
@@ -126,7 +127,7 @@
                 <tr><th>Dostawca</th><th>Rola / zakres</th><th>Lokalizacja przetwarzania</th></tr>
               </thead>
               <tbody>
-                <tr><td>Google (Google LLC / Google Ireland)</td><td>integracja Google Calendar / Google Meet (dot. Mentorów, opcjonalnie)</td><td>UE / USA</td></tr>
+                <tr><td>Google (Google LLC / Google Ireland)</td><td>integracja Google Calendar / Google Meet (dot. Mentorów, opcjonalnie) oraz kalendarz Serwisu w Google Workspace, w którym powstają wydarzenia i spotkania Google Meet dla Sesji z Mentorami bez połączonego Kalendarza Google (zob. §5 ust. 9)</td><td>UE / USA</td></tr>
                 <tr><td>Resend</td><td>wysyłka wiadomości e-mail (transakcyjnych i systemowych)</td><td>USA</td></tr>
                 <tr><td>Cloudinary</td><td>przechowywanie i przetwarzanie plików multimedialnych (np. zdjęcia profilowe)</td><td>USA</td></tr>
                 <tr><td>Railway</td><td>dostawca infrastruktury hostingowej aplikacji</td><td>UE</td></tr>
@@ -142,12 +143,13 @@
           <ol>
             <li>Połączenie Kalendarza Google jest opcjonalne i dostępne tylko dla Mentorów. Mentor łączy kalendarz samodzielnie w ustawieniach integracji w Serwisie i może go w każdej chwili odłączyć.</li>
             <li>Serwis prosi Google wyłącznie o następujące uprawnienia: <strong>calendar.events</strong> (tworzenie, aktualizacja i usuwanie wydarzeń w kalendarzu), <strong>openid</strong> i <strong>email</strong> (identyfikacja połączonego konta Google i jego adres e-mail).</li>
-            <li>Dane otrzymane z Google wykorzystujemy wyłącznie do tego, by po Rezerwacji Sesji utworzyć wydarzenie w głównym Kalendarzu Google Mentora wraz z linkiem do spotkania Google Meet, zaktualizować je w razie potrzeby oraz usunąć je po odwołaniu Sesji. Wydarzenie zawiera nazwę Sesji, termin rozpoczęcia i zakończenia oraz adres e-mail Studenta jako gościa. Serwis nie wysyła z Google zaproszeń do gości, a link do spotkania przekazuje uczestnikom samodzielnie.</li>
+            <li>Dane otrzymane z Google wykorzystujemy wyłącznie do tego, by po Rezerwacji Sesji utworzyć wydarzenie w głównym Kalendarzu Google Mentora wraz z linkiem do spotkania Google Meet, zaktualizować je w razie potrzeby oraz usunąć je po odwołaniu Sesji. Wydarzenie zawiera nazwę Sesji, termin rozpoczęcia i zakończenia oraz adres e-mail Studenta jako gościa. Serwis nie wysyła z Google zaproszeń do gości, a link do spotkania przekazuje uczestnikom samodzielnie. Sesje z Mentorem, który nie połączył Kalendarza Google, opisuje ust. 9.</li>
             <li>Serwis nie odczytuje innych wydarzeń z Kalendarza Google Mentora ani innych danych z jego konta Google niż wymienione w ust. 2.</li>
             <li>Danych otrzymanych z Google nie sprzedajemy, nie wykorzystujemy do celów reklamowych, w tym do reklamy spersonalizowanej, ani do oceny zdolności kredytowej. Nie przekazujemy ich osobom trzecim, chyba że jest to niezbędne do działania funkcji opisanej w ust. 3, do zapewnienia bezpieczeństwa, do wypełnienia obowiązku prawnego lub w ramach połączenia, przejęcia albo sprzedaży przedsiębiorstwa.</li>
             <li>Ludzie nie odczytują danych otrzymanych z Google, chyba że Mentor wyrazi na to wyraźną zgodę w odniesieniu do konkretnych danych, jest to niezbędne ze względów bezpieczeństwa (np. wyjaśnienie nadużycia), wymagają tego przepisy prawa albo dane zostały zagregowane i zanonimizowane na potrzeby wewnętrznego działania Serwisu.</li>
             <li>Danych otrzymanych z Google nie przekazujemy do żadnych narzędzi ani usług sztucznej inteligencji lub uczenia maszynowego i nie wykorzystujemy ich, w postaci surowej, zagregowanej, zanonimizowanej ani pochodnej, do tworzenia, trenowania ani ulepszania modeli sztucznej inteligencji lub uczenia maszynowego (zob. §6).</li>
             <li>Tokeny dostępu i odświeżania są przechowywane w formie zaszyfrowanej. Po odłączeniu Kalendarza Google w Serwisie lub po usunięciu Konta unieważniamy uprawnienia w Google i usuwamy z Serwisu tokeny oraz adres e-mail połączonego konta Google. Wydarzenia utworzone wcześniej w Kalendarzu Google pozostają w kalendarzu Mentora i może on je usunąć samodzielnie. Dostęp Serwisu można też w każdej chwili cofnąć w ustawieniach konta Google: <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">https://myaccount.google.com/permissions</a>.</li>
+            <li>Jeżeli Mentor nie połączył Kalendarza Google albo połączenie przestało działać (np. Mentor cofnął dostęp), wydarzenie Sesji wraz z linkiem do spotkania Google Meet tworzymy w kalendarzu Serwisu, prowadzonym na koncie Google Workspace w domenie twojmentor.it. Wydarzenie zawiera nazwę Sesji, termin rozpoczęcia i zakończenia oraz adresy e-mail Studenta i Mentora jako gości. Google wysyła gościom z tego konta zaproszenie, a przy odwołaniu Sesji powiadomienie o odwołaniu. Wydarzenie jest prywatne, goście nie widzą listy gości i nie mogą zapraszać innych osób ani zmieniać wydarzenia. Po zmianie adresu e-mail w Serwisie aktualizujemy go w przyszłych wydarzeniach, a po usunięciu Konta usuwamy adres z przyszłych wydarzeń. Wydarzenia usuwamy z kalendarza Serwisu 30 dni po zakończeniu Sesji. Kalendarz Serwisu nie korzysta z danych z konta Google Mentora ani Studenta, a podstawą przetwarzania jest wykonanie umowy (art. 6 ust. 1 lit. b RODO).</li>
             <li>Wykorzystanie i przekazywanie przez TwójMentor.IT do jakiejkolwiek innej aplikacji informacji otrzymanych z interfejsów API Google jest zgodne z <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, w tym z wymogami Limited Use.</li>
             <li lang="en"><strong>Limited Use statement:</strong> TwójMentor.IT's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements. The use of raw or derived user data received from Google Workspace APIs will adhere to the Google User Data Policy, including the Limited Use requirements. Google user data is never transferred to third-party AI/ML services and is never used to create, train or improve AI/ML models.</li>
           </ol>
@@ -173,6 +175,7 @@
                 <tr><td>Treści komunikacji (czat)</td><td>rok</td></tr>
                 <tr><td>Dane dotyczące zgłoszeń i sporów</td><td>do upływu okresu przedawnienia roszczeń związanych ze zgłoszeniem lub sporem</td></tr>
                 <tr><td>Tokeny i adres e-mail połączonego konta Google</td><td>do czasu odłączenia integracji przez Mentora lub usunięcia Konta (zob. §5 ust. 8)</td></tr>
+                <tr><td>Wydarzenia Sesji w kalendarzu Serwisu</td><td>30 dni od zakończenia Sesji (zob. §5 ust. 9)</td></tr>
                 <tr><td>Dane techniczne / logi</td><td>14 dni</td></tr>
               </tbody>
             </table>
